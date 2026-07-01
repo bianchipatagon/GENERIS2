@@ -1,0 +1,313 @@
+%% 
+
+
+\documentclass[a4paper,fleqn]{cas-dc}
+
+% If the frontmatter runs over more than one page
+% use the longmktitle option.
+
+%\documentclass[a4paper,fleqn,longmktitle]{cas-dc}
+
+%\usepackage[numbers]{natbib}
+%\usepackage[authoryear]{natbib}
+\usepackage[authoryear,longnamesfirst]{natbib}
+
+%%%Author macros
+\def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
+\tsc{WGM}
+\tsc{QE}
+%%%
+
+
+\begin{document}
+\let\WriteBookmarks\relax
+\def\floatpagepagefraction{1}
+\def\textpagefraction{.001}
+
+% Short title
+\shorttitle{}    
+
+% Short author
+\shortauthors{Emilio Bianchi, Ignacio Sagardoy, Francisco Lallana, Gustavo Nadal, Gonzalo Bravo}  
+
+% Main title of the paper
+\title [mode = title]{GENERIS}  
+
+% Title footnote mark
+% eg: \tnotemark[1]
+\tnotemark[1] 
+
+% Title footnote 1.
+% eg: \tnotetext[1]{Title footnote text}
+\tnotetext[1]{} 
+
+% First author
+%
+% Options: Use if required
+% eg: \author[1,3]{Author Name}[type=editor,
+%       style=chinese,
+%       auid=000,
+%       bioid=1,
+%       prefix=Sir,
+%       orcid=0000-0000-0000-0000,
+%       facebook=<facebook id>,
+%       twitter=<twitter id>,
+%       linkedin=<linkedin id>,
+%       gplus=<gplus id>]
+
+\author[1,2]{Emilio Bianchi}%[<options>]
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[1]
+
+% Email id of the first author
+\ead{ebianchi@unrn.edu.ar}
+
+% URL of the first author
+%\ead[url]{}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization of this study, Methodology, Software}
+
+\author[3]{Ignacio Sagardoy}%[<options>]
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[1]
+
+% Email id of the first author
+%\ead{}
+
+% URL of the first author
+%\ead[url]{}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization of this study, Methodology, Software}
+
+\author[3]{Francisco Lallana}%[<options>]
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[1]
+
+% Email id of the first author
+%\ead{}
+
+% URL of the first author
+%\ead[url]{}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization of this study, Methodology, Software}
+
+\author[3]{Gustavo Nadal}%[<options>]
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[1]
+
+% Email id of the first author
+%\ead{}
+
+% URL of the first author
+%\ead[url]{}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization of this study, Methodology, Software}
+
+\author[3]{Gonzalo Bravo}%[<options>]
+
+% Corresponding author indication
+%\cormark[1]
+
+% Footnote of the first author
+%\fnmark[1]
+
+% Email id of the first author
+%\ead{}
+
+% URL of the first author
+%\ead[url]{}
+
+% Credit authorship
+% eg: \credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization of this study, Methodology, Software}
+
+% Address/affiliation
+\affiliation[1]{organization={Consejo Nacional de Investigaciones
+		Científicas y Técnicas},
+            %addressline={}, 
+            %city={},
+%          citysep={}, % Uncomment if no comma needed between city and postcode
+            %postcode={}, 
+            %state={},
+            country={Argentina}}
+
+\affiliation[2]{organization={Universidad Nacional de Río Negro},
+	%addressline={}, 
+	%city={},
+	%          citysep={}, % Uncomment if no comma needed between city and postcode
+	%postcode={}, 
+	%state={},
+	country={Argentina}}
+
+\affiliation[3]{organization={Fundación Bariloche},
+	%addressline={}, 
+	%city={},
+	%          citysep={}, % Uncomment if no comma needed between city and postcode
+	%postcode={}, 
+	%state={},
+	country={Argentina}}
+
+% Corresponding author text
+\cortext[1]{Corresponding author}
+
+% Footnote text
+\fntext[1]{}
+
+
+\credit{Conceptualization of this study, Methodology, Software}
+
+
+% Here goes the abstract
+\begin{abstract}
+Here goes the abstract \nocite{*}%% Remove this line from your manuscript.
+\end{abstract}
+
+% Use if graphical abstract is present
+%\begin{graphicalabstract}
+%\includegraphics{}
+%\end{graphicalabstract}
+
+% Research highlights
+%\begin{highlights}
+%\item 
+%\item 
+%\item 
+%\end{highlights}
+
+
+%\nocite{*}
+
+% Keywords
+% Each keyword is seperated by \sep
+\begin{keywords}
+ \sep \sep \sep
+\end{keywords}
+
+\maketitle
+
+% Main text
+\section{Introduction}\label{Introduction}
+
+In recent years there has been a global expansion of renewable power generation \cite{shahbaz2023exploring, hassan2024comprehensive}, driven by de-carbonization efforts and declining costs in renewable technologies \cite{jager2025snapshot, joshi2025review, manservigi2026unlocking}. This rapid deployment of renewable generation has been mostly due to additions in solar (at both utility and residential scale), hydro and wind capacity \cite{shahbaz2023exploring, hassan2024comprehensive}. Currently, annual renewable capacity additions outpace conventional capacity additions \cite{IRENA2025}, and this upward trend will likely continue in the forecoming decades \cite{international2019future, raturi2021}.
+
+However, the rapid expansion of renewable generation is leading to grid integration difficulties due to inherent variability and uncertainty in the output \cite{li2015comprehensive, liu2023balancing}. Spatiotemporal mismatches between power supply and demand may arise if capacity planning and grid infrastructure development do not keep pace \cite{ming2013overall, bird2016wind, o2020too,li2024promoting}. Oversupply of renewable generation — occurring during periods of low demand or high wind and solar resource availability — can result in curtailment of a fraction of the generated energy \cite{denholm2015overgeneration, bird2016wind, o2020too}. This issue is further compounded by the increasing penetration of residential-scale distributed generation, which is generally excluded from centralized dispatch scheduling owing to its negligible individual capacity \cite{li2015comprehensive, bhattarai2022assay}. As a result, these challenges place increasing demands on power system flexibility and energy storage capacity, both of which are essential for balancing supply and demand in high-penetration renewable energy systems \cite{denholm2019timescales,iu2023balancing,nejla2025overcoming}.
+
+In particular, South America has also experienced accelerated penetration of renewable generation in recent years, with wind and solar photovoltaic capacity accounting for more than half of annual capacity additions \cite{IEA2023LatinAmerica}. Although renewable penetration has been uneven across countries, several are already experiencing increasing curtailment rates \cite{von2022vertimiento, silva2025wind}. Chile has recorded curtailment rates of up to 20\% of total annual renewable generation, driven mainly by a geographical mismatch between solar generation — concentrated in the northern Atacama region — and demand centers located farther south \cite{von2022vertimiento, silva2025wind}. In Brazil, by contrast, the rapid expansion of distributed generation has reshaped the load profile, also resulting in high curtailment rates \cite{da2025regulatory, silva2026curtailment}. Despite these challenges, the region's abundant hydroelectric capacity \cite{farfan2017structural, IEA2023LatinAmerica} represents an additional advantage for renewable energy integration, offering flexible storage and dispatch capabilities that can help mitigate variability and curtailment \cite{wan1993factors, hingray2014integrating}.
+
+Bolivia's current power mix is dominated by hydro and thermal generation—accounting for approximately 70\% and 20\% of installed capacity, respectively — with only a small share of non-hydro renewables \cite{AETN2026} —. Efforts are underway to further decarbonize the electricity sector: national development plans \cite{Bolivia_PER2035} and Bolivia's Nationally Determined Contributions (NDC) \cite{Bolivia_NDC2021} foresee substantial growth in centralized renewable capacity. The accelerated uptake of distributed solar PV observed in the region \cite{chueca2023early} suggests that distributed generation growth represents a plausible complementary pathway.
+
+Given this growing complexity in power systems, energy modeling has become a crucial tool for exploring supply and demand scenarios that support long-term policy decisions \cite{huntington1982modeling, pfenninger2014energy}. However, few studies have modeled the impacts of renewable energy penetration on power systems in South America. In Bolivia, Fernandez-Vazquez et al. \cite{fernandez2022energy} developed a long-term optimization model of the Bolivian energy sector using OSeMOSYS, based on a trend-based projection of power demand, and analyzed policy-based scenarios to induce decarbonization of the power system. However, the specific impacts of renewable capacity expansion — particularly distributed generation — on transmission requirements, thermal fuel consumption, greenhouse gas (GHG) emissions, and energy curtailment remain unexplored. This study aims to analyze the impacts of exogenous renewable capacity additions — both centralized and distributed — on power transmission, fuel consumption in thermal power facilities, GHG emissions, and energy curtailment. An intraday hydroelectric dispatch strategy is also proposed to mitigate renewable energy curtailment. For this purpose, we constructed a regionalized model of the Bolivian energy sector using the LEAP-NEMO tool.
+
+\begin{figure}[H]
+	\includegraphics[clip,width=.9\columnwidth]{mapas.png}
+	\caption{\label{mapa} Regionalization included in the model and power lines}
+\end{figure}
+
+
+
+% Numbered list
+% Use the style of numbering in square brackets.
+% If nothing is used, default style will be taken.
+%\begin{enumerate}[a)]
+%\item 
+%\item 
+%\item 
+%\end{enumerate}  
+
+% Unnumbered list
+%\begin{itemize}
+%\item 
+%\item 
+%\item 
+%\end{itemize}  
+
+% Description list
+%\begin{description}
+%\item[]
+%\item[] 
+%\item[] 
+%\end{description}  
+
+\clearpage %%Remove this from your manuscript
+
+% Figure
+\begin{figure}%[]
+  \centering
+%    \includegraphics{}
+    \caption{}\label{fig1}
+\end{figure}
+
+
+\begin{table}%[]
+\caption{}\label{tbl1}
+\begin{tabular*}{\tblwidth}{@{}LL@{}}
+\toprule
+  &  \\ % Table header row
+\midrule
+ & \\
+ & \\
+ & \\
+ & \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+% Uncomment and use as the case may be
+%\begin{theorem} 
+%\end{theorem}
+
+% Uncomment and use as the case may be
+%\begin{lemma} 
+%\end{lemma}
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+\section{}\label{}
+
+% To print the credit authorship contribution details
+\printcredits
+
+%% Loading bibliography style file
+%\bibliographystyle{model1-num-names}
+\bibliographystyle{cas-model2-names}
+
+% Loading bibliography database
+\bibliography{cas-refs}
+
+% Biography
+%\bio{}
+% Here goes the biography details.
+%\endbio
+
+%\bio{pic1}
+% Here goes the biography details.
+%\endbio
+
+\end{document}
+

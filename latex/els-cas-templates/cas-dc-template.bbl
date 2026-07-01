@@ -1,0 +1,208 @@
+\begin{thebibliography}{22}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Book
+\bibitem[{Agency(2019)}]{international2019future}
+\bibinfo{author}{Agency, I.R.E.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Future of Solar Photovoltaic-Deployment Investment
+  Technology Grid Integration and Socio-Economic Aspects}.
+\newblock \bibinfo{publisher}{International Renewable Energy Agency IRENA}.
+%Type = Article
+\bibitem[{Bhattarai et~al.(2022)Bhattarai, Maraseni and
+  Apan}]{bhattarai2022assay}
+\bibinfo{author}{Bhattarai, U.}, \bibinfo{author}{Maraseni, T.},
+  \bibinfo{author}{Apan, A.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Assay of renewable energy transition: A systematic
+  literature review}.
+\newblock \bibinfo{journal}{Science of The Total Environment}
+  \bibinfo{volume}{833}, \bibinfo{pages}{155159}.
+%Type = Article
+\bibitem[{Bird et~al.(2016)Bird, Lew, Milligan, Carlini, Estanqueiro, Flynn,
+  Gomez-Lazaro, Holttinen, Menemenlis, Orths et~al.}]{bird2016wind}
+\bibinfo{author}{Bird, L.}, \bibinfo{author}{Lew, D.},
+  \bibinfo{author}{Milligan, M.}, \bibinfo{author}{Carlini, E.M.},
+  \bibinfo{author}{Estanqueiro, A.}, \bibinfo{author}{Flynn, D.},
+  \bibinfo{author}{Gomez-Lazaro, E.}, \bibinfo{author}{Holttinen, H.},
+  \bibinfo{author}{Menemenlis, N.}, \bibinfo{author}{Orths, A.}, et~al.,
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Wind and solar energy curtailment: A review of
+  international experience}.
+\newblock \bibinfo{journal}{Renewable and Sustainable Energy Reviews}
+  \bibinfo{volume}{65}, \bibinfo{pages}{577--586}.
+%Type = Article
+\bibitem[{Denholm and Mai(2019)}]{denholm2019timescales}
+\bibinfo{author}{Denholm, P.}, \bibinfo{author}{Mai, T.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Timescales of energy storage needed for reducing
+  renewable energy curtailment}.
+\newblock \bibinfo{journal}{Renewable energy} \bibinfo{volume}{130},
+  \bibinfo{pages}{388--399}.
+%Type = Techreport
+\bibitem[{Denholm et~al.(2015)Denholm, O'Connell, Brinkman and
+  Jorgenson}]{denholm2015overgeneration}
+\bibinfo{author}{Denholm, P.}, \bibinfo{author}{O'Connell, M.},
+  \bibinfo{author}{Brinkman, G.}, \bibinfo{author}{Jorgenson, J.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Overgeneration from solar energy in california. a
+  field guide to the duck chart}.
+\newblock \bibinfo{type}{Technical Report}. National Renewable Energy
+  Lab.(NREL), Golden, CO (United States).
+%Type = Article
+\bibitem[{Hassan et~al.(2024)Hassan, Algburi, Sameen, Al-Musawi, Al-Jiboory,
+  Salman, Ali and Jaszczur}]{hassan2024comprehensive}
+\bibinfo{author}{Hassan, Q.}, \bibinfo{author}{Algburi, S.},
+  \bibinfo{author}{Sameen, A.Z.}, \bibinfo{author}{Al-Musawi, T.J.},
+  \bibinfo{author}{Al-Jiboory, A.K.}, \bibinfo{author}{Salman, H.M.},
+  \bibinfo{author}{Ali, B.M.}, \bibinfo{author}{Jaszczur, M.},
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{A comprehensive review of international renewable
+  energy growth}.
+\newblock \bibinfo{journal}{Energy and built environment} .
+%Type = Techreport
+\bibitem[{{International Energy Agency}(2023)}]{IEA2023LatinAmerica}
+\bibinfo{author}{{International Energy Agency}}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Latin America Energy Outlook 2023}.
+\newblock \bibinfo{type}{Technical Report}. International Energy Agency (IEA).
+  \bibinfo{address}{Paris}.
+\newblock \URLprefix
+  \url{https://www.iea.org/reports/latin-america-energy-outlook-2023}.
+  \bibinfo{note}{licence: CC BY 4.0}.
+%Type = Techreport
+\bibitem[{{IRENA}(2025)}]{IRENA2025}
+\bibinfo{author}{{IRENA}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Renewable Capacity Statistics 2025}.
+\newblock \bibinfo{type}{Technical Report}. International Renewable Energy
+  Agency. \bibinfo{address}{Abu Dhabi}.
+\newblock \URLprefix
+  \url{https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Mar/IRENA_DAT_RE_Capacity_Statistics_2025.pdf}.
+%Type = Article
+\bibitem[{J{\"a}ger-Waldau(2025)}]{jager2025snapshot}
+\bibinfo{author}{J{\"a}ger-Waldau, A.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Snapshot of photovoltaics- march 2025}.
+\newblock \bibinfo{journal}{EPJ Photovoltaics} \bibinfo{volume}{16},
+  \bibinfo{pages}{22}.
+%Type = Article
+\bibitem[{Joshi et~al.(2025)Joshi, Rao and Banerjee}]{joshi2025review}
+\bibinfo{author}{Joshi, P.}, \bibinfo{author}{Rao, A.B.},
+  \bibinfo{author}{Banerjee, R.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Review of solar pv deployment trends, policy
+  instruments, and growth projections in china, the united states, and india}.
+\newblock \bibinfo{journal}{Renewable and Sustainable Energy Reviews}
+  \bibinfo{volume}{213}, \bibinfo{pages}{115436}.
+%Type = Article
+\bibitem[{Li et~al.(2015)Li, Shi, Cao, Wang, Kuang, Tan and
+  Wei}]{li2015comprehensive}
+\bibinfo{author}{Li, C.}, \bibinfo{author}{Shi, H.}, \bibinfo{author}{Cao, Y.},
+  \bibinfo{author}{Wang, J.}, \bibinfo{author}{Kuang, Y.},
+  \bibinfo{author}{Tan, Y.}, \bibinfo{author}{Wei, J.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Comprehensive review of renewable energy curtailment
+  and avoidance: A specific example in china}.
+\newblock \bibinfo{journal}{Renewable and Sustainable Energy Reviews}
+  \bibinfo{volume}{41}, \bibinfo{pages}{1067--1079}.
+%Type = Article
+\bibitem[{Li et~al.(2024)Li, Wang, Guo, Xin, Zhang, Liu and
+  Feng}]{li2024promoting}
+\bibinfo{author}{Li, J.}, \bibinfo{author}{Wang, C.}, \bibinfo{author}{Guo,
+  J.}, \bibinfo{author}{Xin, Y.}, \bibinfo{author}{Zhang, N.},
+  \bibinfo{author}{Liu, X.}, \bibinfo{author}{Feng, K.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Promoting sustainable development goals by optimizing
+  city-level solar photovoltaic deployment in china}.
+\newblock \bibinfo{journal}{Environmental Science \& Technology}
+  \bibinfo{volume}{58}, \bibinfo{pages}{5196--5209}.
+%Type = Article
+\bibitem[{Liu and He(2023)}]{liu2023balancing}
+\bibinfo{author}{Liu, Z.}, \bibinfo{author}{He, X.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Balancing-oriented hydropower operation makes the
+  clean energy transition more affordable and simultaneously boosts water
+  security}.
+\newblock \bibinfo{journal}{Nature Water} \bibinfo{volume}{1},
+  \bibinfo{pages}{778--789}.
+%Type = Article
+\bibitem[{Manservigi et~al.(2026)Manservigi, Castorino, Spina, Venturini and
+  Gonzalez-Salazar}]{manservigi2026unlocking}
+\bibinfo{author}{Manservigi, L.}, \bibinfo{author}{Castorino, G.A.M.},
+  \bibinfo{author}{Spina, P.R.}, \bibinfo{author}{Venturini, M.},
+  \bibinfo{author}{Gonzalez-Salazar, M.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Unlocking the future of solar pv in europe:
+  high-resolution supply curves for decarbonizing the energy sector}.
+\newblock \bibinfo{journal}{Renewable Energy} , \bibinfo{pages}{125809}.
+%Type = Article
+\bibitem[{Ming et~al.(2013)Ming, Kun and Jun}]{ming2013overall}
+\bibinfo{author}{Ming, Z.}, \bibinfo{author}{Kun, Z.}, \bibinfo{author}{Jun,
+  D.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Overall review of china's wind power industry: Status
+  quo, existing problems and perspective for future development}.
+\newblock \bibinfo{journal}{Renewable and Sustainable Energy Reviews}
+  \bibinfo{volume}{24}, \bibinfo{pages}{379--386}.
+%Type = Article
+\bibitem[{Nejla et~al.(2025)Nejla, Saidani and Besbes}]{nejla2025overcoming}
+\bibinfo{author}{Nejla, E.}, \bibinfo{author}{Saidani, K.},
+  \bibinfo{author}{Besbes, M.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Overcoming the integration bottleneck: a global
+  review of renewable energy and grid adaptation strategies}.
+\newblock \bibinfo{journal}{International Journal of Sustainable Energy}
+  \bibinfo{volume}{44}, \bibinfo{pages}{2569922}.
+%Type = Article
+\bibitem[{O'Shaughnessy et~al.(2020)O'Shaughnessy, Cruce and Xu}]{o2020too}
+\bibinfo{author}{O'Shaughnessy, E.}, \bibinfo{author}{Cruce, J.R.},
+  \bibinfo{author}{Xu, K.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Too much of a good thing? global trends in the
+  curtailment of solar pv}.
+\newblock \bibinfo{journal}{Solar Energy} \bibinfo{volume}{208},
+  \bibinfo{pages}{1068--1077}.
+%Type = Article
+\bibitem[{von Papp et~al.(2022)von Papp, Moraga and
+  Henr{\'\i}quez}]{von2022vertimiento}
+\bibinfo{author}{von Papp, J.}, \bibinfo{author}{Moraga, F.},
+  \bibinfo{author}{Henr{\'\i}quez, A.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Vertimiento de energ{\'\i}a de centrales e{\'o}licas
+  y solares fotovoltaicas del sistema el{\'e}ctrico nacional (sen) en chile
+  durante 2022}.
+\newblock \bibinfo{journal}{Recuperado de: https://www. fraunhofer.
+  cl/es/publicaciones/whitepapers/vertimiento-energia-centrales-eolicas-y-solares-fotovoltaicas-delsistema-electrico-nacional-2022.
+  html} .
+%Type = Article
+\bibitem[{Raturi(2021)}]{raturi2021}
+\bibinfo{author}{Raturi, A.K.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Renewables 2021 global status report} .
+%Type = Article
+\bibitem[{Shahbaz et~al.(2023)Shahbaz, Siddiqui, Siddiqui, Jiao and
+  Kautish}]{shahbaz2023exploring}
+\bibinfo{author}{Shahbaz, M.}, \bibinfo{author}{Siddiqui, A.},
+  \bibinfo{author}{Siddiqui, M.}, \bibinfo{author}{Jiao, Z.},
+  \bibinfo{author}{Kautish, P.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Exploring the growth of sustainable energy
+  technologies: A review}.
+\newblock \bibinfo{journal}{Sustainable Energy Technologies and Assessments}
+  \bibinfo{volume}{57}, \bibinfo{pages}{103157}.
+%Type = Inproceedings
+\bibitem[{Silva et~al.(2025)Silva, Renolphi, Vieira, Louren{\c{c}}o, Salles and
+  Monaro}]{silva2025wind}
+\bibinfo{author}{Silva, W.N.}, \bibinfo{author}{Renolphi, I.B.},
+  \bibinfo{author}{Vieira, G.G.}, \bibinfo{author}{Louren{\c{c}}o, L.F.},
+  \bibinfo{author}{Salles, M.B.}, \bibinfo{author}{Monaro, R.M.},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Wind and solar curtailment in brazil: Quantifying
+  grid constraints in the energy transition}, in: \bibinfo{booktitle}{2025 16th
+  IEEE International Conference on Industry Applications (INDUSCON)},
+  \bibinfo{organization}{IEEE}. pp. \bibinfo{pages}{01--08}.
+%Type = Techreport
+\bibitem[{Su{\'a}rez(2025)}]{Ember2025Chile}
+\bibinfo{author}{Su{\'a}rez, W.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Reducing Curtailment in {Chile}: Key to Unlocking the
+  Full Potential of Renewable Energy}.
+\newblock \bibinfo{type}{Technical Report}. Ember.
+\newblock \URLprefix
+  \url{https://ember-energy.org/app/uploads/2025/09/EN-Report-Reducing-curtailment-in-Chile-key-to-unlocking-the-full-potential-of-renewable-energy.pdf}.
+  \bibinfo{note}{accessed: June 2026}.
+
+\end{thebibliography}
