@@ -71,7 +71,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization of this study, Methodology, Software}
+\credit{Formal analysis, Investigation, Methodology, Visualization, Writing – original draft}
 
 \author[3]{Ignacio Sagardoy}%[<options>]
 
@@ -89,7 +89,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization, Formal analysis, Investigation, Methodology, Validation}
 
 \author[3]{Francisco Lallana}%[<options>]
 
@@ -107,7 +107,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization, Funding acquisition, Investigation, Methodology, Supervision, Validation}
 
 \author[3]{Gustavo Nadal}%[<options>]
 
@@ -125,7 +125,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization of this study, Methodology, Software}
+\credit{Conceptualization, Funding acquisition, Investigation, Methodology, Supervision}
 
 \author[3]{Gonzalo Bravo}%[<options>]
 
@@ -143,7 +143,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization of this study, Methodology, Software}
+\credit{Funding acquisition, Project administration}
 
 % Address/affiliation
 \affiliation[1]{organization={Consejo Nacional de Investigaciones
@@ -220,12 +220,48 @@ In particular, South America has also experienced accelerated penetration of ren
 
 Bolivia's current power mix is dominated by hydro and thermal generation—accounting for approximately 70\% and 20\% of installed capacity, respectively — with only a small share of non-hydro renewables \cite{AETN2026} —. Efforts are underway to further decarbonize the electricity sector: national development plans \cite{Bolivia_PER2035} and Bolivia's Nationally Determined Contributions (NDC) \cite{Bolivia_NDC2021} foresee substantial growth in centralized renewable capacity. The accelerated uptake of distributed solar PV observed in the region \cite{chueca2023early} suggests that distributed generation growth represents a plausible complementary pathway.
 
-Given this growing complexity in power systems, energy modeling has become a crucial tool for exploring supply and demand scenarios that support long-term policy decisions \cite{huntington1982modeling, pfenninger2014energy}. However, few studies have modeled the impacts of renewable energy penetration on power systems in South America. In Bolivia, Fernandez-Vazquez et al. \cite{fernandez2022energy} developed a long-term optimization model of the Bolivian energy sector using OSeMOSYS, based on a trend-based projection of power demand, and analyzed policy-based scenarios to induce decarbonization of the power system. However, the specific impacts of renewable capacity expansion — particularly distributed generation — on transmission requirements, thermal fuel consumption, greenhouse gas (GHG) emissions, and energy curtailment remain unexplored. This study aims to analyze the impacts of exogenous renewable capacity additions — both centralized and distributed — on power transmission, fuel consumption in thermal power facilities, GHG emissions, and energy curtailment. An intraday hydroelectric dispatch strategy is also proposed to mitigate renewable energy curtailment. For this purpose, we constructed a regionalized model of the Bolivian energy sector using the LEAP-NEMO tool.
+Given this growing complexity in power systems, energy modeling has become a crucial tool for exploring supply and demand scenarios that support long-term policy decisions \cite{huntington1982modeling, pfenninger2014energy}. However, few studies have modeled the impacts of renewable energy penetration on power systems in South America. In Bolivia, Fernandez-Vazquez et al. \cite{fernandez2022energy} developed a long-term optimization model of the Bolivian energy sector using OSeMOSYS, based on a trend-based projection of power demand, and analyzed policy-based scenarios to induce decarbonization of the power system. However, the specific impacts of renewable capacity expansion — particularly distributed generation — on transmission requirements, thermal fuel consumption, greenhouse gas (GHG) emissions, and energy curtailment remain unexplored. This study aims to analyze the impacts of exogenous renewable capacity additions — both centralized and distributed — on power transmission, fuel consumption in thermal power facilities, GHG emissions, and energy curtailment. An intraday hydroelectric dispatch strategy is also proposed to mitigate renewable energy curtailment. For this purpose, we constructed a regionalized model of the Bolivian energy sector using the LEAP and NEMO modeling tools.
 
-\begin{figure}[H]
+The structure of the paper proceeds as follows: Section 2...
+
+\section{Methodology}
+\subsection{Case study}
+Electricity demand currently represents approximately 11\% of Bolivia's overall energy demand and has grown at an annual rate of approximately 5.7\% in recent years \cite{MHE2023BED, MHE2024BEN}. This demand is predominantly met by natural gas (NG) and hydroelectric generation. By the end of 2024, the installed capacity of the National Interconnected System (NIS) totaled 3580 MW, of which 2573 MW corresponded to thermoelectric sources and 758 MW to hydroelectric sources, with the remaining 249 MW distributed across wind, solar, and biomass. Approximately 98\% of thermoelectric capacity is NG-based, with the remainder corresponding to diesel engines; the NG-based fleet, in turn, is composed of 66\% combined-cycle, 30\% turbo-gas, and 4\% turbo-vapor units.
+
+NG-based generation accounts for most of Bolivia's capacity expansion over the last three decades \cite{ballivian2024embracing}. More recently, however, a steep decline in domestic NG production \cite{MHE2024BEN} has motivated the development of national plans and policies aimed at decarbonizing the power sector \cite{balderrama2017techno, fernandez2022energy}. The capacity expansion plan assessed in this study, prepared by the Ministry of Energy, includes two ambitious scenarios of 100\% renewable capacity additions up to 2037.
+
+Bolivia's NIS has no current linkages with the national grids of bordering countries and can therefore be considered an isolated system; it currently covers eight out of nine departments. Given this configuration, Bolivia's energy system was represented in this study as a multi-nodal system, consisting of four nodes or regions obtained by grouping the administrative divisions as follows:
+\begin{itemize}
+	\item Norte (La Paz + Beni)
+	\item Centro (Cochabamba + Oruro)
+	\item Oriente (Santa Cruz)
+	\item Sur (Tarija, Potos\'i, and Chuquisaca)
+\end{itemize}
+This regionalization was based on prior energy modeling studies conducted in Bolivia that proposed this specific departmental aggregation (see \cite{casella2020power}). Accordingly, this structure was replicated in the present study to facilitate comparison with independently conducted modeling exercises.
+
+Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. The main features of the power lines are detailed in Table \ref{lineas}.
+
+\begin{figure}[hbpt]
 	\includegraphics[clip,width=.9\columnwidth]{mapas.png}
-	\caption{\label{mapa} Regionalization included in the model and power lines}
+	\caption{\label{mapa} Regional nodes included in the model and power lines}
 \end{figure}
+
+\begin{table}[hb]
+	\caption{Power lines}
+	\label{lineas}
+	\begin{tabular}{lcc}
+		\toprule
+		\textbf{Line} & \textbf{Nodes} & \textbf{Capacity [MW]} \\
+		\midrule
+		L1 & Centro-Norte & 390 \\
+		-L2 & Centro-Sur & 260 \\
+		-L3 & Centro-Oriente & 165 \\
+		L4 & Oriente-Norte & 35 \\
+		-L5 & Centro-Oriente & 500 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 
 
 
