@@ -230,16 +230,17 @@ Electricity demand currently represents approximately 11\% of Bolivia's overall 
 
 NG-based generation accounts for most of Bolivia's capacity expansion over the last three decades \cite{ballivian2024embracing}. More recently, however, a steep decline in domestic NG production \cite{MHE2024BEN} has motivated the development of national plans and policies aimed at decarbonizing the power sector \cite{balderrama2017techno, fernandez2022energy}. The capacity expansion plan assessed in this study, prepared by the Ministry of Energy, includes two ambitious scenarios of 100\% renewable capacity additions up to 2037.
 
-Bolivia's NIS has no current linkages with the national grids of bordering countries and can therefore be considered an isolated system; it currently covers eight out of nine departments. Given this configuration, Bolivia's energy system was represented in this study as a multi-nodal system, consisting of four nodes or regions obtained by grouping the administrative divisions as follows:
+Bolivia's NIS has no current linkages with the national grids of bordering countries and can therefore be considered an isolated system; it currently covers eight out of nine departments. Given this configuration, Bolivia's energy system was represented in this study as a multi-nodal system, consisting of five nodes or regions obtained by grouping the administrative divisions as follows:
 \begin{itemize}
+	\item Pando
 	\item Norte (La Paz + Beni)
 	\item Centro (Cochabamba + Oruro)
 	\item Oriente (Santa Cruz)
 	\item Sur (Tarija, Potos\'i, and Chuquisaca)
 \end{itemize}
-This regionalization was based on prior energy modeling studies conducted in Bolivia that proposed this specific departmental aggregation (see \cite{casella2020power}). Accordingly, this structure was replicated in the present study to facilitate comparison with independently conducted modeling exercises.
+This regionalization was based on prior energy modeling studies conducted in Bolivia that proposed this specific departmental aggregation (see \cite{huallpara2023comparative}). Accordingly, this structure was replicated in the present study to facilitate comparison with independently conducted modeling exercises.
 
-Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. The main features of the power lines are detailed in Table \ref{lineas}.
+Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. Pando Region is not currently interconnected with the other regions. AGREGAR LOSSES The main features of the power lines are detailed in Table \ref{lineas}.
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=.9\columnwidth]{mapas.png}
@@ -254,13 +255,36 @@ Figure \ref{mapa} shows the location of the nodes and the representation of the 
 		\textbf{Line} & \textbf{Nodes} & \textbf{Capacity [MW]} \\
 		\midrule
 		L1 & Centro-Norte & 390 \\
-		-L2 & Centro-Sur & 260 \\
-		-L3 & Centro-Oriente & 165 \\
+		L2 & Centro-Sur & 260 \\
+		L3 & Centro-Oriente & 165 \\
 		L4 & Oriente-Norte & 35 \\
-		-L5 & Centro-Oriente & 500 \\
+		L5 & Centro-Oriente & 500 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\subsection{Modelling approach}
+
+In this study, the Low Emissions Analysis Platform (LEAP) and the Next Energy Modeling System for Optimization (NEMO) were used to model Bolivia's energy sector. LEAP is a modeling tool developed by the Stockholm Environment Institute \cite{Heaps2022LEAP}. It has been widely used by researchers and organizations to project future energy demand and supply and greenhouse gas (GHG) emissions, and to assess energy policies and scenarios \cite{emodi2017energy, shahid2021leap, handayani2023integrating}. It supports the implementation of multiple modeling approaches within a single model, including bottom-up \cite{fleiter2011barriers} and top-down methodologies \cite{rogan2014leaps}, and it allows the formulation and comparison of different energy scenarios. NEMO is an open-source tool for energy system optimization \cite{SEI2026NEMO}. Combined with LEAP, it enables additional modeling capabilities, such as least-cost optimization of energy supply and demand, multi-regional trade simulation, nodal network configuration, and energy storage modeling. In this study, we implemented a bottom-up approach and enabled NEMO's optimization module, together with the Cbc solver, for non-renewable capacity expansion, nodal simulation, and electricity dispatch.
+
+The structure of both energy demand and supply — including regional features — was replicated in LEAP using information from national energy balances and inventories \cite{MHE2023BED, MHE2024BEN, AETN2026}, which provide annual energy demand volumes disaggregated by sector (industry, residential, transport, etc.) and by energy source (electricity, gasoline, diesel, etc.), as well as an updated generation fleet inventory. The base year of the simulation was set to 2023, and the simulation covers the 2023–2050 period.
+
+\subsection{Demand}
+
+As mentioned before, energy demand was modeled for 5 geographical regions (Pando, Norte, Centro Oriente, Sur) and for 7 sectors: residential, transport, industry, commercial + public, agriculture + fishery + mining, and construction. For the residential sector, the number of households represents the unit of consumption. We used population projections from the national bureau of statistics (INE in spanish \cite{INE2024CPV}) to calculate the projected number of households. Households were then disaggregated into urban and rural subsectors, and rural households were further divided into electrified and non-electrified. Final energy uses — such as cooking, water heating, food conservation, and lighting — were then characterized in terms of coverage, efficiency, fuel share, and energy intensity (DE DONDE SALIO ESTO, CITAR). Miscellaneous thermal and electrical uses were also characterized. All electrical appliances were associated with a load curve (EN QUE TRABAJO PREVIO SE CARACTERIZO ESTO).
+
+The transport sector was sub-divided into: road (light-duty, medium-duty, and heavy-duty), rail, air, waterway, and cable car. The vehicle fleet was regionalized according to inventories provided by INE.
+
+Industrial sector was disaggregated into large-scale and small-scale units. In the case of small-scale units, previous sectoral surveys (CITA< SI HAY) allowed allowed a further dis-aggregation into several categories: foods, beverages and tobacco; non-metallic minerals; paper, wood and furniture; machinery and metals; textile; clothing and leather; and chemical, plastics and pharmaceutical.
+
+
+
+
+
+
+
+
+
 
 
 
