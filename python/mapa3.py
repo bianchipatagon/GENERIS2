@@ -28,7 +28,8 @@ lats = [-14,-17.48, -17.88,-20.3]
 lons = [-67.13,-66.16,-62, -65.25]
 lonsS = [-69.13,-68.16,-64, -67.25]
 
-valuesD =[1632,2084,2463,2164]
+#N, C, O, S
+valuesD =[1340,1326,2463,1069]
 valuesT =[88,900,1041,545]
 valuesH =[309.7,420.5,0,27.9]
 valuesV =[0,27,108,0]
@@ -56,6 +57,7 @@ fig, (ax1, ax2, ax3,ax4) = plt.subplots(1,4,figsize=(18, 7),subplot_kw={"project
 
 #####
 ax1.tick_params(axis='both', labelsize=0, color='white')
+ax1.text(-59,-11.5, 'a)', fontsize=24)
 ax1.set_title('Power demand \n [kBEP]' , fontsize=20)
 Sur.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax1, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
@@ -87,6 +89,7 @@ for lon, lat, val in zip(lons, lats, valuesD):
     )
 #####
 ax2.set_title('Thermal \n [MW]' , fontsize=20)
+ax2.text(-59,-11.5, 'b)', fontsize=24)
 ax2.tick_params(axis='both', labelsize=0, color='white')
 Sur.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax2, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
@@ -118,8 +121,8 @@ for lon, lat, val in zip(lons, lats, valuesT):
     )
 #####
 ax3.tick_params(axis='both', labelsize=0, color='white')
-ax3.set_title('Hidro \n [MW]', fontsize=20)
-
+ax3.set_title('Hydro \n [MW]', fontsize=20)
+ax3.text(-59,-11.5, 'c)', fontsize=24)
 Sur.plot(ax=ax3, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax3, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax3, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -151,6 +154,7 @@ for lon, lat, val in zip(lons, lats, valuesH):
 #####
 ax4.tick_params(axis='both', labelsize=0, color='white')
 ax4.set_title('Wind & Solar \n [MW]', fontsize=20)
+ax4.text(-59,-11.5, 'd)', fontsize=24)
 
 Sur.plot(ax=ax4, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax4, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
