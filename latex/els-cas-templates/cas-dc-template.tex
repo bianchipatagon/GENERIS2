@@ -296,8 +296,7 @@ Against this backdrop, this modeling exercise aims to assess the impact of expan
 
 The BAU scenario contemplates a short-term capacity expansion that includes a 261 MW addition of wind capacity in the Oriente region (Figures \ref{addition} and \ref{scenarios}). It proposes the development of two hydroelectric projects: Ivirizú (291 MW), located in the Central region and comprising two hydroelectric plants (Sehuencas and Juntas); and Miguillas (210 MW) in the Norte region, comprising two cascade hydroelectric plants, Umapalca (86 MW) and Palillada (119 MW). It also includes the addition of 340.5 MW of solar capacity in the Centro and Norte regions. All these capacity additions are configured in LEAP as exogenous capacity additions. Finally, the NEMO optimization assigns a total endogenous capacity of 160 MW of turbo-gas (TG) units for the simulation period. The ALT scenario contemplates a medium-term capacity expansion that adds an additional 631 MW, 1525 MW, and 1220 MW of wind, hydro, and solar capacity relative to the BAU scenario. Wind capacity additions are concentrated in the Oriente (90\%) and Centro (10\%) regions, and are distributed in units ranging from 25 to 100 MW. Hydro capacity additions are associated with the exploitation of the Río Grande basin, and comprise the Rositas (600 MW), La Pesca (460 MW), Cañahuecal (380 MW), and Okitas (85 MW) facilities across the Centro and Oriente regions.
 
-All these centralized capacity additions are configured in LEAP as exogenous capacity additions. Table XX shows... INCLUIR FACTORES DE CAPACIDAD Y AVAILABILITY CURVES . A minimum reserve margin of 30\% was assigned for the NIS, and differential NG production costs across regions were configured to represent the regional availability of this resource. NEMO optimization allows for endogenous capacity expansion when needed to meet the reserve margin requirement. NEMO optimization assigned a total endogenous capacity of 160 MW of turbo-gas (TG) units for the BAU scenario during the simulation period, whereas no endogenous capacity expansions were observed for the ALT scenario.
-
+All centralized capacity additions were configured in LEAP as exogenous capacity additions. Table XX shows [...]. Maximum availability of wind, solar, and hydro was represented by availability curves derived from historical data that display daily fluctuations. A minimum reserve margin of 30\% was assigned for the NIS, and differential NG production costs across regions were configured to represent the regional availability of this resource. NEMO optimization allowed for endogenous capacity expansion when needed to meet the reserve margin requirement.
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=0.9\columnwidth]{ad.png}
@@ -307,11 +306,45 @@ All these centralized capacity additions are configured in LEAP as exogenous cap
 Both scenarios (BAU and ALT) were then combined with two sub-scenarios representing different Solar Distributed (SD) capacity trajectories, resulting in four scenarios in total. BAU and ALT incorporate a total of 100 MW of SD capacity by 2050, whereas BAU-SD and ALT-SD incorporate a total of 1,000 MW by 2050. SD capacity was added following logistic growth curves \cite{joshi2025review} (figure \ref{addition}). SD capacity was regionally disaggregated according to current regional shares of power demand and incorporated into LEAP as a negative electricity demand source, thereby bypassing transmission and distribution losses.
 
 \begin{figure}[hbpt]
-	\includegraphics[clip,width=1.1\columnwidth]{scenarios.png}
+	\includegraphics[clip,width=1\columnwidth]{scenarios.png}
 	\caption{\label{scenarios} Regional centralized capacity additions according to BAU and ALT scenarios}
 \end{figure}
 
-Se realizó un análisis de la evolución de las fuentes de energía primaria y secundaria de la matriz de generación eléctrica de cada región. Se analizó también el flujo de potencia a nivel horario en las líneas eléctricas que conectan las diferentes regiones para los años de corte 2030, 2040 y 2050. Para el año 2050, además, se realizó un balance a nivel horario por región considerando producción de energía eléctrica por fuente y exportación/importación a través de las líneas eléctricas. 
+For each region, we analyzed the evolution of primary and secondary energy sources within the power mix, as well as hourly power flows between regions. A regional balance of electricity generation by source and net trade was also compiled for 2050. GHG emissions were compared across scenarios using 100-year global warming potential (GWP) factors and the built-in Technology and Environmental Database, which contains emission profiles for different generation technologies from the Intergovernmental Panel on Climate Change (IPCC), the US Department of Energy, and the International Energy Agency.
+
+Finally, a total cost analysis of the power system was performed, along with a comparison between scenarios. Total costs include capital and Operation and Maintenance (O&M) costs for different generation technologies (see Table XX), along with differential costs associated with displacing NG-based generation and SD installation costs. Capital and O&M costs are incorporated into the analysis through an annual payment function that amortizes investments over time. This function accounts for equipment lifetime and the interest rate — or systemic discount rate — which was set at 12\% for the entire model. Installation and O&M costs for new wind and solar capacity are assumed to decline over time \cite{irena2025costs}.
+
+\begin{table}[!ht]
+	\centering
+	\setlength{\tabcolsep}{5pt}
+	\caption{Capital and O\&M costs for different power generation technologies}
+	\label{costos}
+	%\resizebox{0.8\columnwidth}{!}{%
+	\begin{tabular}{lcc}
+		\toprule
+		\textbf{Technology} & 	\textbf{Capital} & \textbf{O\&M} \\
+	
+		\textbf{} & \textbf{[US\$/MW]} & \textbf{[US\$/MW-yr]} \\
+		\midrule
+		TG & 855 & 8 \\
+		TV & 1800 & 20 \\
+		Diesel & 1200 & 15 \\
+		CC & 1400 & 12 \\
+		Solar & 1000 & 22 \\
+		Solar (new) & 850--940 & 20--22 \\
+		SD & 1200 & 20--22 \\
+		Wind & 1500 & 36--39 \\
+		Wind (new) & 1300--1450 & 39 \\
+		Hydro & 1500 & 7 \\
+		Rositas (hydro) & 3350 & 38.8 \\
+		Cachuela (hydro) & 1880 & 40 \\
+		Rio Grande (hydro) & 3446 & 39.5 \\
+		Other hydro & 2029 & 29.6 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Regarding the opportunity cost of NG — the main input for fossil-fueled generation — non-utilized NG was assumed to be available for export at a price of 5 US\$/million BTU. A price of 120 US\$/MWh was assigned to diesel-based generation. The installation cost of SD photovoltaic panels was set at 1200 US\$/kW, comprising total capital cost and distribution adequacy costs (i.e., costs associated with reinforcing distribution infrastructure to accommodate distributed generation). Capital costs are assumed to decrease over time, while distribution adequacy costs increase, resulting in an overall installation cost that declines to 584 US\$/kW by the end of the simulation period. All values were calculated at constant 2025 prices, using the 12\% discount rate described above.
  
 \begin{figure*}[tp]
 	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
@@ -319,13 +352,13 @@ Se realizó un análisis de la evolución de las fuentes de energía primaria y 
 	\caption{\label{mapa3} Current (2023) annual electricity demand (a); thermal (b), hydro (c) and wind/solar (d) installed capacity}
 \end{figure*}
 
+\section{Results}
 
+\subsection{Demand}
 
+\subsection{Power generation and transmission}
 
-
-
-
-
+During the simulation period, NEMO assigned a total endogenous capacity of 160 MW of turbo-gas (TG) units under the BAU scenario, whereas no endogenous capacity expansion was observed under ALT.
 
 
 
