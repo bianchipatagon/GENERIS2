@@ -269,6 +269,8 @@ In this study, the Low Emissions Analysis Platform (LEAP) and the Next Energy Mo
 
 The structure of both energy demand and supply — including regional features — was replicated in LEAP using information from national energy balances and inventories \cite{MHE2023BED, MHE2024BEN, AETN2026}, which provide annual energy demand volumes disaggregated by sector (industry, residential, transport, etc.) and by energy source (electricity, gasoline, diesel, etc.), as well as an updated generation fleet inventory. The base year of the simulation was set to 2023, and the simulation covers the 2023–2050 period.
 
+TIME SLICE
+
 \subsection{Demand}
 
 As mentioned before, energy demand was modeled for 5 geographical regions (Pando, Norte, Centro Oriente, Sur) and for 7 sectors: residential, transport, industry, commercial + public, agriculture + fishery + mining, and construction. For the residential sector, the number of households represents the unit of consumption. We used population projections from the national bureau of statistics (INE in spanish \cite{INE2024CPV}) to calculate the projected number of households. Households were then disaggregated into urban and rural subsectors, and rural households were further divided into electrified and non-electrified. Final energy uses — such as cooking, water heating, food conservation, and lighting — were then characterized in terms of coverage, efficiency, fuel share, and energy intensity (DE DONDE SALIO ESTO, CITAR). Miscellaneous thermal and electrical uses were also characterized. All electrical appliances were associated with a load curve (EN QUE TRABAJO PREVIO SE CARACTERIZO ESTO).
@@ -277,23 +279,45 @@ The transport sector was sub-divided into: road (light-duty, medium-duty, and he
 
 The industrial sector was disaggregated into large-scale and small-scale units. For small-scale units, previous sectoral surveys (CITA) allowed further disaggregation into seven categories: food, beverages and tobacco; non-metallic minerals; paper, wood and furniture; machinery and metals; textiles; clothing and leather; and chemicals, plastics and pharmaceuticals. Large-scale units were classified into seven categories according to a previous sectoral survey from INE: food and beverage; cement; bricks; metals; paper, cardboard and wood; chemicals and petrochemicals; and construction materials. For this disaggregation level, we included the consumption share of different fuel types for the years 2021–2023. The fuels considered are electricity, diesel, gasoline, jet fuel, biomass, natural gas (NG), and liquefied petroleum gas (LPG).
 
-Only one energy demand growth scenario was considered in this modeling exercise. For the transport; industry; commercial and public; agriculture, fishery and mining; and construction sectors, gross domestic product (GDP) was taken as the driver of energy demand. Sub-national reports from INE allowed the regional and sectoral disaggregation of GDP. An annual growth rate of 2.8\%, based on historical trends, was considered for the simulation period. For the residential sector, the number of households was taken as the driver of energy demand. INE projects an overall population growth of 20\%, reaching a total of 13.4 million inhabitants by 2050. Data from the last census allowed the regional and urban/rural disaggregation of population. For each region, both total population and number of households were extrapolated from the base year onwards, assuming that the regional proportion remains constant — an assumption that held for the 2012–2024 period. In order to project the regional urban/rural share of households, the ratio of urban-to-rural growth rates was computed. Then, an objective function was included in the projection so that the overall projected national number of urban households matched CEPAL's projection. 
+Only one energy demand growth scenario was considered in this modeling exercise. For the transport; industry; commercial and public; agriculture, fishery and mining; and construction sectors, gross domestic product (GDP) was taken as the driver of energy demand. Sub-national reports from INE allowed the regional and sectoral disaggregation of GDP. An annual growth rate of 2.8\%, based on historical trends, was considered for the simulation period. For the residential sector, the number of households was taken as the driver of energy demand. INE projects an overall population growth of 20\%, reaching a total of 13.4 million inhabitants by 2050. Data from the last census allowed the regional and urban/rural disaggregation of population. For each region, both total population and number of households were extrapolated from the base year onward, assuming that the regional proportion remains constant — an assumption that held for the 2012–2024 period. In order to project the regional urban/rural share of households, the ratio of urban-to-rural growth rates was computed. Then, an objective function was included in the projection so that the overall projected national number of urban households matched CEPAL's projection. 
 
-An analysis of the current energy demand structure shows that electricity represents approximately 11.8\% of the overall energy demand. Electricity demand within the NIS is concentrated in the Oriente region (39\%), followed by Centro, Norte (22\% each), and Sur (17\%) (Figure \ref{mapa}, panel a). The most electricity-consuming sector is residential (37\%), followed by industry (24\%); commercial and public (23\%); agriculture, fishery and mining (11\%); construction (3\%); and transport (0.4\%).
+An analysis of the current energy demand structure shows that electricity represents approximately 11.8\% of the overall energy demand. Electricity demand within the NIS is concentrated in the Oriente region (39\%), followed by Centro, Norte (22\% each), and Sur (17\%) (Figure \ref{mapa3}, panel a). The most electricity-consuming sector is residential (37\%), followed by industry (24\%); commercial and public (23\%); agriculture, fishery and mining (11\%); construction (3\%); and transport (0.4\%).
 
-\begin{figure}[hbpt]
-	\includegraphics[clip,width=1\columnwidth]{mapas3.png}
-	\caption{\label{mapa3} Regional nodes included in the model and power lines}
-\end{figure}
+\subsection{Power supply}
+
+As mentioned above, Bolivia's current generation mix is predominantly thermal, with hydropower as a significant secondary source. Around 70\% of installed capacity is fossil-fueled, concentrated mainly in the Oriente, Centro, and Sur regions (figure \ref{mapa3}b)), while hydro capacity is located in the Centro and Norte regions (figure \ref{mapa3}c)). Wind and solar capacity, which together account for less than 1\% of installed capacity, is concentrated in the Oriente and Centro/Sur regions (figure \ref{mapa3}d)).
+Against this backdrop, this modeling exercise aims to assess the impact of expanding both centralized and distributed renewable capacity in the NIS. To this end, two centralized capacity expansion scenarios were built on top of the demand growth base scenario: Business as Usual (BAU) and Alternative (ALT). Both scenarios represent the expansion of centralized renewable capacity (wind, hydro, and solar) following the official capacity expansion schedule for the 2024-2050 period.
+
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=\textwidth]{mapas3.png}
+	\caption{\label{mapa3} Current (2023) annual electricity demand (a); thermal (b), hydro (c) and wind/solar (d) installed capacity}
+\end{figure*}
+
+The BAU scenario contemplates a short-term capacity expansion that includes a 261 MW addition of wind capacity in the Oriente region (Figures \ref{addition} and \ref{scenarios}). It proposes the development of two hydroelectric projects: Ivirizú (291 MW), located in the Central region and comprising two hydroelectric plants (Sehuencas and Juntas); and Miguillas (210 MW) in the Norte region, comprising two cascade hydroelectric plants, Umapalca (86 MW) and Palillada (119 MW). It also includes the addition of 340.5 MW of solar capacity in the Centro and Norte regions. All these capacity additions are configured in LEAP as exogenous capacity additions. Finally, the NEMO optimization assigns a total endogenous capacity of 160 MW of turbo-gas (TG) units for the simulation period. The ALT scenario contemplates a medium-term capacity expansion that adds an additional 631 MW, 1525 MW, and 1220 MW of wind, hydro, and solar capacity relative to the BAU scenario. Wind capacity additions are concentrated in the Oriente (90\%) and Centro (10\%) regions, and are distributed in units ranging from 25 to 100 MW. Hydro capacity additions are associated with the exploitation of the Río Grande basin, and comprise the Rositas (600 MW), La Pesca (460 MW), Cañahuecal (380 MW), and Okitas (85 MW) facilities across the Centro and Oriente regions.
+
+All these centralized capacity additions are configured in LEAP as exogenous capacity additions. Table XX shows... INCLUIR FACTORES DE CAPACIDAD Y AVAILABILITY CURVES . A minimum reserve margin of 30\% was assigned for the NIS, and differential NG production costs across regions were configured to represent the regional availability of this resource. NEMO optimization allows for endogenous capacity expansion when needed to meet the reserve margin requirement. NEMO optimization assigned a total endogenous capacity of 160 MW of turbo-gas (TG) units for the BAU scenario during the simulation period, whereas no endogenous capacity expansions were observed for the ALT scenario.
+
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=0.9\columnwidth]{ad.png}
-	\caption{\label{adition} Regional nodes included in the model and power lines}
+	\caption{\label{addition} Centralized generation capacity additions for BAU and ALT scenarios (top row), and for SD generation (below)}
 \end{figure}
 
+Both scenarios (BAU and ALT) were then combined with two sub-scenarios representing different Solar Distributed (SD) capacity trajectories, resulting in four scenarios in total. BAU and ALT incorporate a total of 100 MW of SD capacity by 2050, whereas BAU-SD and ALT-SD incorporate a total of 1,000 MW by 2050. SD capacity was added following logistic growth curves \cite{joshi2025review} (figure \ref{addition}). SD capacity was regionally disaggregated according to current regional shares of power demand and incorporated into LEAP as a negative electricity demand source, thereby bypassing transmission and distribution losses.
 
+\begin{figure}[hbpt]
+	\includegraphics[clip,width=1.1\columnwidth]{scenarios.png}
+	\caption{\label{scenarios} Regional centralized capacity additions according to BAU and ALT scenarios}
+\end{figure}
+
+Se realizó un análisis de la evolución de las fuentes de energía primaria y secundaria de la matriz de generación eléctrica de cada región. Se analizó también el flujo de potencia a nivel horario en las líneas eléctricas que conectan las diferentes regiones para los años de corte 2030, 2040 y 2050. Para el año 2050, además, se realizó un balance a nivel horario por región considerando producción de energía eléctrica por fuente y exportación/importación a través de las líneas eléctricas. 
  
-
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=\textwidth]{impoTEN.jpg}
+	\caption{\label{mapa3} Current (2023) annual electricity demand (a); thermal (b), hydro (c) and wind/solar (d) installed capacity}
+\end{figure*}
 
 
 

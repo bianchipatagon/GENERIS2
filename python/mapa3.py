@@ -26,39 +26,37 @@ Pando = Bolivia.iloc[[3]]
 
 lats = [-14,-17.48, -17.88,-20.3]
 lons = [-67.13,-66.16,-62, -65.25]
-lonsS = [-69.13,-68.16,-64, -67.25]
-
-#N, C, O, S
-valuesD =[1340,1326,2463,1069]
-valuesT =[88,900,1041,545]
-valuesH =[309.7,420.5,0,27.9]
-valuesV =[0,27,108,0]
-valuesS =[0,50,0,64]
+valuesE =[0,0,261,0]
+valuesS =[120,198,20,5]
+valuesH =[205,291,0,0]
+valuesE2 =[0,90,841,0]
+valuesS2 =[320,588,20,632.5]
+valuesH2 =[205,671,685,0]
 
 # Convert everything to numpy arrays first
 lons   = np.asarray(lons,   dtype=float)
 lats   = np.asarray(lats,   dtype=float)
-valuesD = np.asarray(valuesD, dtype=float)
-valuesT = np.asarray(valuesT, dtype=float)
-valuesH = np.asarray(valuesH, dtype=float)
-valuesV = np.asarray(valuesV, dtype=float)
+valuesE = np.asarray(valuesE, dtype=float)
 valuesS = np.asarray(valuesS, dtype=float)
+valuesH = np.asarray(valuesH, dtype=float)
+valuesE2 = np.asarray(valuesE2, dtype=float)
+valuesS2 = np.asarray(valuesS2, dtype=float)
+valuesH2 = np.asarray(valuesH2, dtype=float)
 
 # --- size scaling (tweak s_scale to taste) ---
-s_scaleD = 3                         # area units per data unit
-s_scale = 8  
-sizesD   = valuesD * s_scaleD             # passed to scatter(s=...)
-sizesT   = valuesT * s_scale             # passed to scatter(s=...)
-sizesH   = valuesH * s_scale             # passed to scatter(s=...)
-sizesV   = valuesV * s_scale             # passed to scatter(s=...)
+s_scale = 20                           # area units per data unit
+sizesE   = valuesE * s_scale             # passed to scatter(s=...)
 sizesS   = valuesS * s_scale             # passed to scatter(s=...)
+sizesH   = valuesH * s_scale             # passed to scatter(s=...)
+sizesE2   = valuesE2 * s_scale             # passed to scatter(s=...)
+sizesS2   = valuesS2 * s_scale             # passed to scatter(s=...)
+sizesH2   = valuesH2 * s_scale             # passed to scatter(s=...)
 
-fig, (ax1, ax2, ax3,ax4) = plt.subplots(1,4,figsize=(18, 7),subplot_kw={"projection": ccrs.PlateCarree()},)
+fig, ((ax1, ax2, ax3),(ax4, ax5, ax6)) = plt.subplots(2,3,figsize=(18, 14),subplot_kw={"projection": ccrs.PlateCarree()},)
 
 #####
 ax1.tick_params(axis='both', labelsize=0, color='white')
-ax1.text(-59,-11.5, 'a)', fontsize=24)
-ax1.set_title('Power demand \n [kBEP]' , fontsize=20)
+ax1.set_title('Wind', fontsize=30)
 Sur.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax1, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -67,8 +65,8 @@ Pando.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 
 sc = ax1.scatter(
     lons, lats,
-    s          = sizesD,         # marker area (in points²)
-    color="#6D6F70",        # color encodes same variable (optional)
+    s          = sizesE,         # marker area (in points²)
+    color="#8FC73E",        # color encodes same variable (optional)
     cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
@@ -76,11 +74,11 @@ sc = ax1.scatter(
     transform  = ccrs.PlateCarree(),  # ← always needed for lon/lat data
     zorder     = 5,
 )
-for lon, lat, val in zip(lons, lats, valuesD):
+for lon, lat, val in zip(lons, lats, valuesE):
     ax1.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 16,
+        fontsize      = 20,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -88,9 +86,9 @@ for lon, lat, val in zip(lons, lats, valuesD):
         zorder        = 6,       # above the scatter circles
     )
 #####
-ax2.set_title('Thermal \n [MW]' , fontsize=20)
-ax2.text(-59,-11.5, 'b)', fontsize=24)
 ax2.tick_params(axis='both', labelsize=0, color='white')
+ax2.set_title('BAU \n Solar', fontsize=30)
+
 Sur.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax2, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -99,8 +97,8 @@ Pando.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 
 sc = ax2.scatter(
     lons, lats,
-    s          = sizesT,         # marker area (in points²)
-    color="#8B4513",        # color encodes same variable (optional)
+    s          = sizesS,         # marker area (in points²)
+    color="#FBAA1B",        # color encodes same variable (optional)
     cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
@@ -108,11 +106,11 @@ sc = ax2.scatter(
     transform  = ccrs.PlateCarree(),  # ← always needed for lon/lat data
     zorder     = 5,
 )
-for lon, lat, val in zip(lons, lats, valuesT):
+for lon, lat, val in zip(lons, lats, valuesS):
     ax2.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 16,
+        fontsize      = 20,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -121,8 +119,8 @@ for lon, lat, val in zip(lons, lats, valuesT):
     )
 #####
 ax3.tick_params(axis='both', labelsize=0, color='white')
-ax3.set_title('Hydro \n [MW]', fontsize=20)
-ax3.text(-59,-11.5, 'c)', fontsize=24)
+ax3.set_title('Hydro', fontsize=30)
+
 Sur.plot(ax=ax3, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax3, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax3, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -144,18 +142,16 @@ for lon, lat, val in zip(lons, lats, valuesH):
     ax3.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 16,
+        fontsize      = 20,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
         transform     = ccrs.PlateCarree(),
         zorder        = 6,       # above the scatter circles
+        color = 'white'
     )
 #####
 ax4.tick_params(axis='both', labelsize=0, color='white')
-ax4.set_title('Wind & Solar \n [MW]', fontsize=20)
-ax4.text(-59,-11.5, 'd)', fontsize=24)
-
 Sur.plot(ax=ax4, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax4, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax4, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -164,8 +160,8 @@ Pando.plot(ax=ax4, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 
 sc = ax4.scatter(
     lons, lats,
-    s          = sizesV,         # marker area (in points²)
-    color="#9ACD32",        # color encodes same variable (optional)
+    s          = sizesE2,         # marker area (in points²)
+    color="#8FC73E",        # color encodes same variable (optional)
     cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
@@ -173,9 +169,30 @@ sc = ax4.scatter(
     transform  = ccrs.PlateCarree(),  # ← always needed for lon/lat data
     zorder     = 5,
 )
-sc = ax4.scatter(
-    lonsS, lats,
-    s          = sizesS,         # marker area (in points²)
+for lon, lat, val in zip(lons, lats, valuesE2):
+    ax4.text(
+        lon, lat-0.5,          # +1.5° nudges the label above the circle
+        f"{val:.0f}",            # format to 1 decimal place
+        fontsize      = 20,
+        fontweight='bold',
+        ha            = "center",
+        va            = "bottom",
+        transform     = ccrs.PlateCarree(),
+        zorder        = 6,       # above the scatter circles
+    )
+#####
+ax5.tick_params(axis='both', labelsize=0, color='white')
+ax5.set_title('ALT', fontsize=30)
+
+Sur.plot(ax=ax5, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Norte.plot(ax=ax5, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
+Centro.plot(ax=ax5, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Oriente.plot(ax=ax5, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Pando.plot(ax=ax5, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+
+sc = ax5.scatter(
+    lons, lats,
+    s          = sizesS2,         # marker area (in points²)
     color="#FBAA1B",        # color encodes same variable (optional)
     cmap       = "plasma",
     alpha      = 0.75,
@@ -184,30 +201,48 @@ sc = ax4.scatter(
     transform  = ccrs.PlateCarree(),  # ← always needed for lon/lat data
     zorder     = 5,
 )
-for lon, lat, val in zip(lons, lats, valuesV):
-    ax4.text(
+for lon, lat, val in zip(lons, lats, valuesS2):
+    ax5.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 16,
+        fontsize      = 20,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
         transform     = ccrs.PlateCarree(),
         zorder        = 6,       # above the scatter circles
     )
-    
-for lon, lat, val in zip(lonsS, lats, valuesS):
-    ax4.text(
-        lon, lat-0.5,          # +1.5° nudges the label above the circle
-        f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 16,
-        fontweight='bold',
-        ha            = "center",
-        va            = "bottom",
-        transform     = ccrs.PlateCarree(),
-        zorder        = 6,       # above the scatter circles
-    )
+#####
+ax6.tick_params(axis='both', labelsize=0, color='white')
+Sur.plot(ax=ax6, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Norte.plot(ax=ax6, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
+Centro.plot(ax=ax6, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Oriente.plot(ax=ax6, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
+Pando.plot(ax=ax6, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 
+sc = ax6.scatter(
+    lons, lats,
+    s          = sizesH2,         # marker area (in points²)
+    color="#0000CD",        # color encodes same variable (optional)
+    cmap       = "plasma",
+    alpha      = 0.75,
+    edgecolors = "white",
+    linewidths = 0.5,
+    transform  = ccrs.PlateCarree(),  # ← always needed for lon/lat data
+    zorder     = 5,
+)
+for lon, lat, val in zip(lons, lats, valuesH2):
+    ax6.text(
+        lon, lat-0.5,          # +1.5° nudges the label above the circle
+        f"{val:.0f}",            # format to 1 decimal place
+        fontsize      = 20,
+        fontweight='bold',
+        ha            = "center",
+        va            = "bottom",
+        transform     = ccrs.PlateCarree(),
+        zorder        = 6,       # above the scatter circles
+        color = 'white'
+    )
 fig.subplots_adjust(wspace=0.05, hspace=0.1)
 
 plt.savefig('mapas3.svg', dpi=600, bbox_inches="tight")
