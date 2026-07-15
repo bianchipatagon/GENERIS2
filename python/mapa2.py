@@ -32,15 +32,15 @@ lat7 = -17.94
 
 # Method 1: Define colors for specific provinces by name
 province_colors = {
-    'Chuquisaca': '#207653',  # Red
-    'Tarija': '#207653',  # Teal
-    'Potosi': '#207653',  # Blue
-    'Oruro': '#207653',  # Light Salmon
-    'Cochabamba': '#207653',  # Mint
-    'La Paz': '#207653',  # Teal
-    'Beni': '#207653',  # Blue
-    'Santa Cruz': '#207653',  # Light Salmon
-    'Pando': '#207653',  # Mint
+    'Chuquisaca': '#ADA4BA',  # Red
+    'Tarija': '#ADA4BA',  # Teal
+    'Potosi': '#ADA4BA',  # Blue
+    'Oruro': '#ADA4BA',  # Light Salmon
+    'Cochabamba': '#ADA4BA',  # Mint
+    'La Paz': '#ADA4BA',  # Teal
+    'Beni': '#ADA4BA',  # Blue
+    'Santa Cruz': '#ADA4BA',  # Light Salmon
+    'Pando': '#ADA4BA',  # Mint
 }
 
 province_column = 'nom_dep'
@@ -52,15 +52,15 @@ province_column = 'nom_dep'
 fig, ax = plt.subplots( 1,1, figsize=(10, 10))
 # ~ fig = plt.figure(figsize=(10, 10))
 # ~ ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
-ax.plot(lons, lats, 'o', color='black', ms="14", zorder=1000)
+ax.plot(lons, lats, 'o', color='black', ms="18", zorder=1000)
 # ~ ax.add_feature(cfeature.BORDERS, edgecolor='ivory')
-ax.plot(lons, lats, 'o', color='whitesmoke', ms="5", zorder=1000)
+ax.plot(lons, lats, 'o', color='darkviolet', ms="11", zorder=1000)
 
 ax.plot([lon1, lon2], [lat1, lat2], color='midnightblue', linewidth=3.9, label = 'L1') #centro-norte
 ax.plot([lon1, lon4], [lat1, lat4], color='midnightblue', linewidth=1.65, label = 'L3') #centro-sur
 ax.plot([lon1, lon3], [lat1, lat3], color='midnightblue', linewidth=2.6, label = 'L2') #centro-oriente
 # ~ ax.plot([lon2, lon5], [lat2, lat5], color='midnightblue', linewidth=2, label = 'L4',linestyle='dashed') #norte-pando
-ax.plot([lon2, lon3], [lat2, lat3], color='midnightblue', linewidth=0.35, label = 'L5') #oriente-norte
+ax.plot([lon2, lon3], [lat2, lat3], color='midnightblue', linewidth=0.6, label = 'L5') #oriente-norte
 ax.plot([lon1, lon3], [lat6, lat7], color='midnightblue', linewidth=5, label = 'L6') #oriente-norte
 
 # ~ ax.plot([lon1, lon2], [lat1, lat2], color='midnightblue', linewidth=3.9, label = 'L1 - 390 MW') #centro-norte
@@ -71,11 +71,11 @@ ax.plot([lon1, lon3], [lat6, lat7], color='midnightblue', linewidth=5, label = '
 # ~ ax.plot([lon1, lon3], [lat6, lat7], color='midnightblue', linewidth=5, label = 'L6 - 500 MW') #oriente-norte
 ax.tick_params(axis='both', labelsize=0, color='white')
 # ~ ax.text(-66,-20, 'Sur',labelsize=10, color='white' )
-ax.text(-66,-21, 'Sur',fontsize=20, weight = 'bold', color='lavender')
-ax.text(-62,-18, 'Oriente',fontsize=20, weight = 'bold', color='lavender')
-ax.text(-67.5,-14.5, 'Norte',fontsize=20, weight = 'bold', color='lavender')
-ax.text(-68.7,-11.7, 'Pando',fontsize=20, weight = 'bold', color='lavender')
-ax.text(-68.7,-19, 'Centro',fontsize=20, weight = 'bold', color='lavender')
+ax.text(-66,-21, 'Sur',fontsize=20, weight = 'bold', color='black')
+ax.text(-62,-18, 'Oriente',fontsize=20, weight = 'bold', color='black')
+ax.text(-67.5,-14.5, 'Norte',fontsize=20, weight = 'bold', color='black')
+ax.text(-68.7,-11.7, 'Pando',fontsize=20, weight = 'bold', color='black')
+ax.text(-68.7,-19, 'Centro',fontsize=20, weight = 'bold', color='black')
 ax.tick_params(axis='both', labelsize=24)
 ax.set_yticks([-10, -14, -18, -22])
 ax.set_xticks([-68, -64, -60])
@@ -94,11 +94,20 @@ ax.set_xlabel('lon [°]', fontsize=24)
 # ~ Oriente.plot(ax=ax, color='lightsteelblue', linewidth=4, alpha=0.7,edgecolor='white')
 # ~ Pando.plot(ax=ax, color='lightsteelblue', linewidth=4, alpha=0.7,edgecolor='white')
 
-Sur.plot(ax=ax, color='#A1140B', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
-Norte.plot(ax=ax, color='#207653', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
-Centro.plot(ax=ax, color='#FBAA1B', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
-Oriente.plot(ax=ax, color='#8FC73E', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
-Pando.plot(ax=ax, color='#36495A', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
+# ~ Sur.plot(ax=ax, color='#A1140B', linewidth=2, alpha=0.8,edgecolor='whitesmoke')
+Sur.plot(ax=ax, color='#D7B99B', linewidth=2,edgecolor='#C48888')
+
+# ~ Norte.plot(ax=ax, color='#ADA4BA', linewidth=2, alpha=0.8,edgecolor='#C48888 ')
+Norte.plot(ax=ax, color='#ADA4BA', linewidth=2,edgecolor='#C48888')
+
+# ~ Centro.plot(ax=ax, color='#FF9B9B', linewidth=2, alpha=0.8,edgecolor='#C48888 ')
+Centro.plot(ax=ax, color='#FF9B9B', linewidth=2,edgecolor='#C48888')
+
+# ~ Oriente.plot(ax=ax, color='#8FC73E', linewidth=2, alpha=0.8,edgecolor='#C48888 ')
+Oriente.plot(ax=ax, color='#BCEE9B', linewidth=2, edgecolor='#C48888')
+
+# ~ Pando.plot(ax=ax, color='#36495A', linewidth=2, alpha=0.8,edgecolor='#C48888 ')
+Pando.plot(ax=ax, color='#9BBC9B', linewidth=2, edgecolor='#C48888')
 
 plt.savefig('mapas.png', dpi=600, bbox_inches="tight")
 

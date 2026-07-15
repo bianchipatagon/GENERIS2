@@ -52,7 +52,7 @@ sizesE2   = valuesE2 * s_scale             # passed to scatter(s=...)
 sizesS2   = valuesS2 * s_scale             # passed to scatter(s=...)
 sizesH2   = valuesH2 * s_scale             # passed to scatter(s=...)
 
-fig, ((ax1, ax2, ax3),(ax4, ax5, ax6)) = plt.subplots(2,3,figsize=(18, 14),subplot_kw={"projection": ccrs.PlateCarree()},)
+fig, ((ax1, ax2, ax3),(ax4, ax5, ax6)) = plt.subplots(2,3,figsize=(1, 14),subplot_kw={"projection": ccrs.PlateCarree()},)
 
 #####
 ax1.tick_params(axis='both', labelsize=0, color='white')

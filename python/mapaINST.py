@@ -100,7 +100,8 @@ Pando.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 sc = ax2.scatter(
     lons, lats,
     s          = sizesT,         # marker area (in points²)
-    color="#8B4513",        # color encodes same variable (optional)
+    # ~ color="#8B4513",        # color encodes same variable (optional)
+    color="black",        # color encodes same variable (optional)
     cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",

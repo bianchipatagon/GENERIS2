@@ -222,7 +222,7 @@ Bolivia's current power mix is dominated by hydro and thermal generation—accou
 
 Given this growing complexity in power systems, energy modeling has become a crucial tool for exploring supply and demand scenarios that support long-term policy decisions \cite{huntington1982modeling, pfenninger2014energy}. However, few studies have modeled the impacts of renewable energy penetration on power systems in South America. In Bolivia, Fernandez-Vazquez et al. \cite{fernandez2022energy} developed a long-term optimization model of the Bolivian energy sector using OSeMOSYS, based on a trend-based projection of power demand, and analyzed policy-based scenarios to induce decarbonization of the power system. However, the specific impacts of renewable capacity expansion — particularly distributed generation — on transmission requirements, thermal fuel consumption, greenhouse gas (GHG) emissions, and energy curtailment remain unexplored. This study aims to analyze the impacts of exogenous renewable capacity additions — both centralized and distributed — on power transmission, fuel consumption in thermal power facilities, GHG emissions, and energy curtailment. An intraday hydroelectric dispatch strategy is also proposed to mitigate renewable energy curtailment. For this purpose, we constructed a regionalized model of the Bolivian energy sector using the LEAP and NEMO modeling tools.
 
-The structure of the paper proceeds as follows: Section 2...
+The paper is structured as follows: Section 2 describes the particularities of Bolivia's energy and power system, the modeling approach implemented in this study, the characterization of energy and electricity demand, and the current power generation fleet along with the scenarios considered. Section 3 presents the results of the scenario analysis and comparison in terms of their effects on overall power demand and supply, fuel savings, GHG emissions, regional electricity balances and flows, and total costs within the NIS.
 
 \section{Methodology}
 \subsection{Case study}
@@ -243,7 +243,7 @@ This regionalization was based on prior energy modeling studies conducted in Bol
 Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. Pando Region is not currently interconnected with the other regions. AGREGAR LOSSES The main features of the power lines are detailed in Table \ref{lineas}.
 
 \begin{figure}[hbpt]
-	\includegraphics[clip,width=.9\columnwidth]{mapas.png}
+	\includegraphics[clip,width=1\columnwidth]{mapas.png}
 	\caption{\label{mapa} Regional nodes included in the model and power lines}
 \end{figure}
 
@@ -269,7 +269,8 @@ In this study, the Low Emissions Analysis Platform (LEAP) and the Next Energy Mo
 
 The structure of both energy demand and supply — including regional features — was replicated in LEAP using information from national energy balances and inventories \cite{MHE2023BED, MHE2024BEN, AETN2026}, which provide annual energy demand volumes disaggregated by sector (industry, residential, transport, etc.) and by energy source (electricity, gasoline, diesel, etc.), as well as an updated generation fleet inventory. The base year of the simulation was set to 2023, and the simulation covers the 2023–2050 period.
 
-TIME SLICE
+Both power load curves as well as maximum availability curves for hydroelectric, solar and wind plants were configured with two-hourly resolution grouped in a wet season (november to april) amd a dry season (may to october), resulting in XXX tome slices per year.
+
 
 \subsection{Demand}
 
@@ -296,7 +297,7 @@ Against this backdrop, this modeling exercise aims to assess the impact of expan
 
 The BAU scenario contemplates a short-term capacity expansion that includes a 261 MW addition of wind capacity in the Oriente region (Figures \ref{addition} and \ref{scenarios}). It proposes the development of two hydroelectric projects: Ivirizú (291 MW), located in the Central region and comprising two hydroelectric plants (Sehuencas and Juntas); and Miguillas (210 MW) in the Norte region, comprising two cascade hydroelectric plants, Umapalca (86 MW) and Palillada (119 MW). It also includes the addition of 340.5 MW of solar capacity in the Centro and Norte regions. All these capacity additions are configured in LEAP as exogenous capacity additions. Finally, the NEMO optimization assigns a total endogenous capacity of 160 MW of turbo-gas (TG) units for the simulation period. The ALT scenario contemplates a medium-term capacity expansion that adds an additional 631 MW, 1525 MW, and 1220 MW of wind, hydro, and solar capacity relative to the BAU scenario. Wind capacity additions are concentrated in the Oriente (90\%) and Centro (10\%) regions, and are distributed in units ranging from 25 to 100 MW. Hydro capacity additions are associated with the exploitation of the Río Grande basin, and comprise the Rositas (600 MW), La Pesca (460 MW), Cañahuecal (380 MW), and Okitas (85 MW) facilities across the Centro and Oriente regions.
 
-All centralized capacity additions were configured in LEAP as exogenous capacity additions. Table XX shows [...]. Maximum availability of wind, solar, and hydro was represented by availability curves derived from historical data that display daily fluctuations. A minimum reserve margin of 30\% was assigned for the NIS, and differential NG production costs across regions were configured to represent the regional availability of this resource. NEMO optimization allowed for endogenous capacity expansion when needed to meet the reserve margin requirement.
+All centralized capacity additions were configured in LEAP as exogenous capacity additions. Maximum availability of wind, solar, and hydro was represented by availability curves derived from historical data that display daily fluctuations. A minimum reserve margin of 30\% was assigned for the NIS, and differential NG production costs across regions were configured to represent the regional availability of this resource. NEMO optimization allowed for endogenous capacity expansion when needed to meet the reserve margin requirement.
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=0.9\columnwidth]{ad.png}
@@ -307,7 +308,7 @@ Both scenarios (BAU and ALT) were then combined with two sub-scenarios represent
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=1\columnwidth]{scenarios.png}
-	\caption{\label{scenarios} Regional centralized capacity additions according to BAU and ALT scenarios}
+	\caption{\label{scenarios} Regional centralized capacity additions [MW] according to BAU and ALT scenarios}
 \end{figure}
 
 For each region, we analyzed the evolution of primary and secondary energy sources within the power mix, as well as hourly power flows between regions. A regional balance of electricity generation by source and net trade was also compiled for 2050. GHG emissions were compared across scenarios using 100-year global warming potential (GWP) factors and the built-in Technology and Environmental Database, which contains emission profiles for different generation technologies from the Intergovernmental Panel on Climate Change (IPCC), the US Department of Energy, and the International Energy Agency.
@@ -324,48 +325,89 @@ Finally, a total cost analysis of the power system was performed, along with a c
 		\toprule
 		\textbf{Technology} & 	\textbf{Capital} & \textbf{O\&M} \\
 	
-		\textbf{} & \textbf{[US\$/MW]} & \textbf{[US\$/MW-yr]} \\
+		\textbf{} & \textbf{[USD/MW]} & \textbf{[USD/MW-yr]} \\
 		\midrule
 		TG & 855 & 8 \\
-		TV & 1800 & 20 \\
-		Diesel & 1200 & 15 \\
-		CC & 1400 & 12 \\
-		Solar & 1000 & 22 \\
+		TV & 1,800 & 20 \\
+		Diesel & 1,200 & 15 \\
+		CC & 1,400 & 12 \\
+		Solar & 1,000 & 22 \\
 		Solar (new) & 850--940 & 20--22 \\
-		SD & 1200 & 20--22 \\
-		Wind & 1500 & 36--39 \\
-		Wind (new) & 1300--1450 & 39 \\
-		Hydro & 1500 & 7 \\
-		Rositas (hydro) & 3350 & 38.8 \\
-		Cachuela (hydro) & 1880 & 40 \\
-		Rio Grande (hydro) & 3446 & 39.5 \\
-		Other hydro & 2029 & 29.6 \\
+		SD & 1,200 & 20--22 \\
+		Wind & 1,500 & 36--39 \\
+		Wind (new) & 1,300--1,450 & 39 \\
+		Hydro & 1,500 & 7 \\
+		Rositas (hydro) & 3,350 & 38.8 \\
+		Cachuela (hydro) & 1,880 & 40 \\
+		Rio Grande (hydro) & 3,446 & 39.5 \\
+		Other hydro & 2,029 & 29.6 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 Regarding the opportunity cost of NG — the main input for fossil-fueled generation — non-utilized NG was assumed to be available for export at a price of 5 US\$/million BTU. A price of 120 US\$/MWh was assigned to diesel-based generation. The installation cost of SD photovoltaic panels was set at 1200 US\$/kW, comprising total capital cost and distribution adequacy costs (i.e., costs associated with reinforcing distribution infrastructure to accommodate distributed generation). Capital costs are assumed to decrease over time, while distribution adequacy costs increase, resulting in an overall installation cost that declines to 584 US\$/kW by the end of the simulation period. All values were calculated at constant 2025 prices, using the 12\% discount rate described above.
- 
-\begin{figure*}[tp]
-	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
-	\includegraphics[width=\textwidth]{impoTEN.jpg}
-	\caption{\label{mapa3} Current (2023) annual electricity demand (a); thermal (b), hydro (c) and wind/solar (d) installed capacity}
-\end{figure*}
 
 \section{Results}
 
 \subsection{Demand}
 
-\subsection{Power generation and transmission}
+The addition of SD (distributed generation) reduces the net power demand observed in the NIS. Comparison between scenarios (BAU-SD/ALT-SD vs. BAU/ALT) shows that an additional capacity of 900 MW of SD reduces net demand by about 9\% by 2050. The net accumulated energy savings over the simulation period amount to approximately 22,000 and 25,000 GWh, respectively, representing nearly twice the total annual demand of the base year.
+
+\subsection{Power supply}
 
 During the simulation period, NEMO assigned a total endogenous capacity of 160 MW of turbo-gas (TG) units under the BAU scenario, whereas no endogenous capacity expansion was observed under ALT.
 
+Regarding power generation, the addition of SD capacity coincides with a decrease in thermal generation in both the BAU and BAU-SD scenarios. In the first scenario, SD generation represents less than 1\% of annual generation by 2050, while thermal generation escalates from 36\% in the base year to 61\% (figure \ref{gene}). In the second scenario, by contrast, SD generation represents nearly 9\% of annual generation by 2050, while thermal generation only escalates to 51\%. For the ALT and ALT-SD scenarios, there is a marked reduction in thermal generation, reaching 27\% and 26\% of annual generation by 2050, respectively, though this reduction is mostly associated with the massive deployment of centralized renewable capacity. The addition of 900 MW of SD (comparing ALT and ALT-SD) coincides with a reduction in hydro generation (42\% of annual generation in ALT vs. 37\% in ALT-SD).
 
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=0.8\textwidth]{generacion.png}
+	\caption{\label{gene} Current (2023) and projected annual electricity generation according to BAU, BAU-SD, ALT and ALT-SD scenarios}
+\end{figure*}
 
+The addition of SD capacity produces positive externalities in terms of fuel savings and GHG emissions. An additional 900 MW of SD capacity produces greater fuel savings for the BAU scenario than for the ALT scenario. Fuel savings for the BAU-SD scenario reach 960 kBEP annually by 2050 compared to BAU, with accumulated savings of 15,000 kBEP over the simulation period — nearly the total inputs for power generation in the base year. For the ALT-SD scenario, by contrast, accumulated savings total only 1,930 kBEP compared to ALT. GHG emissions follow a similar pattern: accumulated emission savings are greater for the BAU-SD scenario compared to BAU (9,900,000 metric tonnes of CO\textsubscript{2}-equivalent, Figure \ref{emis}) than for the ALT-SD scenario compared to ALT (1,170,000 metric tonnes of CO\textsubscript{2}-equivalent).
 
+\begin{figure}[hbpt]
+	\includegraphics[clip,width=1\columnwidth]{emis.png}
+	\caption{\label{emis} Annual GHG emmisions according to BAU, BAU-SD, ALT and ALT-SD scenarios}
+\end{figure}
 
+Overall costs related to the NIS present differences across scenarios. Costs are higher for the ALT scenario (≈1,600 million USD) than for the BAU scenario. Fuel-related savings of around 1,000 million USD are exceeded by higher capital costs (see Table \ref{costostot}). The addition of SD capacity produces modest increases in overall costs: 185 and 206 million USD for BAU-SD and ALT-SD compared with BAU and ALT, respectively. Savings related to fuel replacement are higher for BAU-SD, since SD generation replaces thermal generation. In ALT-SD, by contrast, SD generation displaces a higher proportion of centralized renewable generation.
 
+\begin{table}[!ht]
+	\centering
+	\setlength{\tabcolsep}{5pt}
+	\caption{Costs (BAU & ALT scenarios) and differential costs (BAU-SD & ALT-SD scenarios). Values are expressed in MM USD}
+	\label{costostot}
+	%\resizebox{0.8\columnwidth}{!}{%
+		\begin{tabular}{lcccc}
+			\toprule
+			\textbf{} & \textbf{BAU} & 	\textbf{(BAU-SD)} & \textbf{ALT} & \textbf{(ALT-SD)} \\
+			\textbf{} & \textbf{}  & \textbf{-BAU} & \textbf{} & \textbf{-ALT} \\
 
+			\midrule
+			Fuel & 2,227 & -171 & 1,192 & -25 \\
+			Capital + O\&M & 6,963 & -1 & 11,605 & -128 \\
+			SD panels & 39  & 360 & 39 & 360 \\
+			Total & 9,230  & 185 & 12,837 & 206 \\
+		
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+\subsubsection{Regional power generation and trade scenarios}
+
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=\textwidth]{tradeTEN.png}
+	\caption{\label{impo} Current (2023) and projected annual electricity generation according to BAU, BAU-SD, ALT and ALT-SD scenarios}
+\end{figure*}
+
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=\textwidth]{inputTEN.jpg}
+	\caption{\label{inputTEN} Current (2023) and projected annual electricity generation according to BAU, BAU-SD, ALT and ALT-SD scenarios}
+\end{figure*}
 
 
 % Numbered list
