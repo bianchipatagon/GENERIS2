@@ -187,8 +187,8 @@ axs[3,2].set_xlim(-0.5, 23.5)
 
 #################### EXPORTS ###############################
 
-ALT = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosTEN.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
-ALTGD = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosTENGD.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+ALT = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+ALTGD = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT-GD.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
 
 
 RESTA1 = ALTGD-ALT
