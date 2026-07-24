@@ -12,6 +12,7 @@
 %\usepackage[authoryear]{natbib}
 \usepackage[authoryear,longnamesfirst]{natbib}
 \usepackage{array}
+\usepackage[export]{adjustbox}
 
 %%%Author macros
 \def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
@@ -302,10 +303,10 @@ All centralized capacity additions were configured in LEAP as exogenous capacity
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=0.9\columnwidth]{ad.png}
-	\caption{\label{addition} Centralized generation capacity additions for BAU and ALT scenarios (top row), and for SD generation (below)}
+	\caption{\label{addition} Centralized generation capacity additions for BAU and ALT scenarios (top row), and for DS generation (below)}
 \end{figure}
 
-Both scenarios (BAU and ALT) were then combined with two sub-scenarios representing different Solar Distributed (SD) capacity trajectories, resulting in four scenarios in total. BAU and ALT incorporate a total of 100 MW of SD capacity by 2050, whereas BAU-SD and ALT-SD incorporate a total of 1,000 MW by 2050. SD capacity was added following logistic growth curves \cite{joshi2025review} (figure \ref{addition}). SD capacity was regionally disaggregated according to current regional shares of power demand and incorporated into LEAP as a negative electricity demand source, thereby bypassing transmission and distribution losses.
+Both scenarios (BAU and ALT) were then combined with two sub-scenarios representing different Distributed Solar (DS) capacity trajectories, resulting in four scenarios in total. BAU and ALT incorporate a total of 100 MW of DS capacity by 2050, whereas BAU-DS and ALT-DS incorporate a total of 1,000 MW by 2050. DS capacity was added following logistic growth curves \cite{joshi2025review} (figure \ref{addition}). DS capacity was regionally disaggregated according to current regional shares of power demand and incorporated into LEAP as a negative electricity demand source, thereby bypassing transmission and distribution losses.
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=1\columnwidth]{scenarios.png}
@@ -314,7 +315,7 @@ Both scenarios (BAU and ALT) were then combined with two sub-scenarios represent
 
 For each region, we analyzed the evolution of primary and secondary energy sources within the power mix, as well as hourly power flows between regions. A regional balance of electricity generation by source and net trade was also compiled for 2050. GHG emissions were compared across scenarios using 100-year global warming potential (GWP) factors and the built-in Technology and Environmental Database, which contains emission profiles for different generation technologies from the Intergovernmental Panel on Climate Change (IPCC), the US Department of Energy, and the International Energy Agency.
 
-Finally, a total cost analysis of the power system was performed, along with a comparison between scenarios. Total costs include capital and Operation and Maintenance (O&M) costs for different generation technologies (see Table XX), along with differential costs associated with displacing NG-based generation and SD installation costs. Capital and O&M costs are incorporated into the analysis through an annual payment function that amortizes investments over time. This function accounts for equipment lifetime and the interest rate — or systemic discount rate — which was set at 12\% for the entire model. Installation and O&M costs for new wind and solar capacity are assumed to decline over time \cite{irena2025costs}.
+Finally, a total cost analysis of the power system was performed, along with a comparison between scenarios. Total costs include capital and Operation and Maintenance (O&M) costs for different generation technologies (see Table XX), along with differential costs associated with displacing NG-based generation and DS installation costs. Capital and O&M costs are incorporated into the analysis through an annual payment function that amortizes investments over time. This function accounts for equipment lifetime and the interest rate — or systemic discount rate — which was set at 12\% for the entire model. Installation and O&M costs for new wind and solar capacity are assumed to decline over time \cite{irena2025costs}.
 
 \begin{table}[!ht]
 	\centering
@@ -346,35 +347,35 @@ Finally, a total cost analysis of the power system was performed, along with a c
 	\end{tabular}
 \end{table}
 
-Regarding the opportunity cost of NG — the main input for fossil-fueled generation — non-utilized NG was assumed to be available for export at a price of 5 US\$/million BTU. A price of 120 US\$/MWh was assigned to diesel-based generation. The installation cost of SD photovoltaic panels was set at 1200 US\$/kW, comprising total capital cost and distribution adequacy costs (i.e., costs associated with reinforcing distribution infrastructure to accommodate distributed generation). Capital costs are assumed to decrease over time, while distribution adequacy costs increase, resulting in an overall installation cost that declines to 584 US\$/kW by the end of the simulation period. All values were calculated at constant 2025 prices, using the 12\% discount rate described above.
+Regarding the opportunity cost of NG — the main input for fossil-fueled generation — non-utilized NG was assumed to be available for export at a price of 5 US\$/million BTU. A price of 120 US\$/MWh was assigned to diesel-based generation. The installation cost of DS photovoltaic panels was set at 1200 US\$/kW, comprising total capital cost and distribution adequacy costs (i.e., costs associated with reinforcing distribution infrastructure to accommodate distributed generation). Capital costs are assumed to decrease over time, while distribution adequacy costs increase, resulting in an overall installation cost that declines to 584 US\$/kW by the end of the simulation period. All values were calculated at constant 2025 prices, using the 12\% discount rate described above.
 
 \section{Results}
 
 \subsection{Demand}
 
-The addition of SD (distributed generation) reduces the net power demand observed in the NIS. Comparison between scenarios (BAU-SD/ALT-SD vs. BAU/ALT) shows that an additional capacity of 900 MW of SD reduces net demand by about 9\% by 2050. The net accumulated energy savings over the simulation period amount to approximately 22,000 and 25,000 GWh, respectively, representing nearly twice the total annual demand of the base year.
+The addition of DS (distributed generation) reduces the net power demand observed in the NIS. Comparison between scenarios (BAU-DS/ALT-DS vs. BAU/ALT) shows that an additional capacity of 900 MW of DS reduces net demand by about 9\% by 2050. The net accumulated energy savings over the simulation period amount to approximately 22,000 and 25,000 GWh, respectively, representing nearly twice the total annual demand of the base year.
 
 \subsection{Power supply}
 
 During the simulation period, NEMO assigned a total endogenous capacity of 160 MW of turbo-gas (TG) units under the BAU scenario, whereas no endogenous capacity expansion was observed under ALT.
 
-Regarding power generation, the addition of SD capacity coincides with a decrease in thermal generation in both the BAU and BAU-SD scenarios. In the first scenario, SD generation represents less than 1\% of annual generation by 2050, while thermal generation escalates from 36\% in the base year to 61\% (figure \ref{gene}). In the second scenario, by contrast, SD generation represents nearly 9\% of annual generation by 2050, while thermal generation only escalates to 51\%. For the ALT and ALT-SD scenarios, there is a marked reduction in thermal generation, reaching 27\% and 26\% of annual generation by 2050, respectively, though this reduction is mostly associated with the massive deployment of centralized renewable capacity. The addition of 900 MW of SD (comparing ALT and ALT-SD) coincides with a reduction in hydro generation (42\% of annual generation in ALT vs. 37\% in ALT-SD).
+Regarding power generation, the addition of DS capacity coincides with a decrease in thermal generation in both the BAU and BAU-DS scenarios. In the first scenario, DS generation represents less than 1\% of annual generation by 2050, while thermal generation escalates from 36\% in the base year to 61\% (figure \ref{gene}). In the second scenario, by contrast, DS generation represents nearly 9\% of annual generation by 2050, while thermal generation only escalates to 51\%. For the ALT and ALT-DS scenarios, there is a marked reduction in thermal generation, reaching 27\% and 26\% of annual generation by 2050, respectively, though this reduction is mostly associated with the massive deployment of centralized renewable capacity. The addition of 900 MW of DS (comparing ALT and ALT-DS) coincides with a reduction in hydro generation (42\% of annual generation in ALT vs. 37\% in ALT-DS).
 
 \begin{table}[!ht]
 	\centering
 	\small
 	\setlength{\tabcolsep}{5pt}
-	\caption{ Current (2025) and projected (2050) annual electricity generation according to BAU, BAU-SD, ALT and ALT-SD scenarios}
+	\caption{ Current (2025) and projected (2050) annual electricity generation according to BAU, BAU-DS, ALT and ALT-DS scenarios}
 	\label{generation}
 	%\resizebox{0.8\columnwidth}{!}{%
 		\begin{tabular}{m{1.5cm}ccccc}
 			\toprule
-			\textbf{} & \text{current} & \text{BAU} & \text{BAU-SD} & \text{ALT} & \text{ALT-SD} \\
+			\textbf{} & \text{current} & \text{BAU} & \text{BAU-DS} & \text{ALT} & \text{ALT-DS} \\
 			\midrule
 		    Generation (Gwh) & 11,430 & 22,410 & 20,610 & 22,256 & 22,122 \\
 			Fossil (\%) & 35.6 & 61.7 & 50.6 & 27.2 & 25.5 \\
 			Solar (\%) & 0.1  & 4.3 & 4.7 & 14.8 & 14.9 \\
-			SD (\%) & 0 & 0.8  & 8.6 & 0.8 & 8 \\
+			DS (\%) & 0 & 0.8  & 8.6 & 0.8 & 8 \\
 			Wind (\%) & 12 & 6.1  & 6.7 & 14.4 & 14.5 \\
 			Hydro (\%) & 47.1 & 27.1  & 29.5 & 42.8 & 37.1 \\
 			\bottomrule
@@ -382,25 +383,25 @@ Regarding power generation, the addition of SD capacity coincides with a decreas
 	\end{table}
 
 
-The addition of SD capacity produces positive externalities in terms of fuel savings and GHG emissions. An additional 900 MW of SD capacity produces greater fuel savings for the BAU scenario than for the ALT scenario. Fuel savings for the BAU-SD scenario reach 960 kBEP annually by 2050 compared to BAU, with accumulated savings of 15,000 kBEP over the simulation period — nearly the total inputs for power generation in the base year. For the ALT-SD scenario, by contrast, accumulated savings total only 1,930 kBEP compared to ALT. GHG emissions follow a similar pattern: accumulated emission savings are greater for the BAU-SD scenario compared to BAU (9,900,000 metric tonnes of CO\textsubscript{2}-equivalent) than for the ALT-SD scenario compared to ALT (1,170,000 metric tonnes of CO\textsubscript{2}-equivalent).
+The addition of DS capacity produces positive externalities in terms of fuel savings and GHG emissions. An additional 900 MW of DS capacity produces greater fuel savings for the BAU scenario than for the ALT scenario. Fuel savings for the BAU-DS scenario reach 960 kBEP annually by 2050 compared to BAU, with accumulated savings of 15,000 kBEP over the simulation period — nearly the total inputs for power generation in the base year. For the ALT-DS scenario, by contrast, accumulated savings total only 1,930 kBEP compared to ALT. GHG emissions follow a similar pattern: accumulated emission savings are greater for the BAU-DS scenario compared to BAU (9,900,000 metric tonnes of CO\textsubscript{2}-equivalent) than for the ALT-DS scenario compared to ALT (1,170,000 metric tonnes of CO\textsubscript{2}-equivalent).
 
-Overall costs related to the NIS present differences across scenarios. Costs are higher for the ALT scenario (≈1,600 million USD) than for the BAU scenario. Fuel-related savings of around 1,000 million USD are exceeded by higher capital costs (see Table \ref{costostot}). The addition of SD capacity produces modest increases in overall costs: 185 and 206 million USD for BAU-SD and ALT-SD compared with BAU and ALT, respectively. Savings related to fuel replacement are higher for BAU-SD, since SD generation replaces thermal generation. In ALT-SD, by contrast, SD generation displaces a higher proportion of centralized renewable generation.
+Overall costs related to the NIS present differences across scenarios. Costs are higher for the ALT scenario (≈1,600 million USD) than for the BAU scenario. Fuel-related savings of around 1,000 million USD are exceeded by higher capital costs (see Table \ref{costostot}). The addition of DS capacity produces modest increases in overall costs: 185 and 206 million USD for BAU-DS and ALT-DS compared with BAU and ALT, respectively. Savings related to fuel replacement are higher for BAU-DS, since DS generation replaces thermal generation. In ALT-DS, by contrast, DS generation displaces a higher proportion of centralized renewable generation.
 
 \begin{table}[!ht]
 	\centering
 	\setlength{\tabcolsep}{5pt}
-	\caption{Costs (BAU & ALT scenarios) and differential costs (BAU-SD & ALT-SD scenarios). Values are expressed in MM USD}
+	\caption{Costs (BAU & ALT scenarios) and differential costs (BAU-DS & ALT-DS scenarios). Values are expressed in MM USD}
 	\label{costostot}
 	%\resizebox{0.8\columnwidth}{!}{%
 		\begin{tabular}{lccccc}
 			\toprule
-			\textbf{} & \text{BAU} & 	\text{(BAU-SD)} & \text{ALT} & \text{(ALT-SD)} \\
+			\textbf{} & \text{BAU} & 	\text{(BAU-DS)} & \text{ALT} & \text{(ALT-DS)} \\
 			\textbf{} & \text{}  & \text{-BAU} & \text{} & \text{-ALT} \\
 
 			\midrule
 			Fuel & 2,227 & -171 & 1,192 & -25 \\
 			Capital + O\&M & 6,963 & -1 & 11,605 & -128 \\
-			SD panels & 39  & 360 & 39 & 360 \\
+			DS panels & 39  & 360 & 39 & 360 \\
 			Total & 9,230  & 185 & 12,837 & 206 \\
 		
 			\bottomrule
@@ -420,22 +421,22 @@ For 2050, almost all exports are made from the Centro region, while imports are 
 \begin{figure*}[tp]
 	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
 	\includegraphics[width=\textwidth]{tradeTEN.png}
-	\caption{\label{tradeB} Daily profiles of inter regional exports and imports of power flow por BAU scenario (first and third row), and differences for BAU-SD scenario (second and fourth row)}
+	\caption{\label{tradeB} Daily profiles of inter regional exports and imports of power flow por BAU scenario (first and third row), and differences for BAU-DS scenario (second and fourth row)}
 \end{figure*}
 
-Additional 900 MW of SD capacity (BAU-SD scenario) translates into modifications in both daily exports/imports and generation features across regions. For 2030, there are marginal increases in exports during solar generation hours from the Norte region, whose generation is predominantly renewable (second and fourth rows in figure \ref{tradeB}, and lower row in figure \ref{inputBAU}). There is also an increase in imports directed to Oriente, which coincides with a local decrease in thermal generation. Centro might be acting as a transit node between Norte and Oriente. Daily exports of around 200 MWh/day are observed from Sur to Centro during the dry season.
+Additional 900 MW of DS capacity (BAU-DS scenario) translates into modifications in both daily exports/imports and generation features across regions. For 2030, there are marginal increases in exports during solar generation hours from the Norte region, whose generation is predominantly renewable (second and fourth rows in figure \ref{tradeB}, and lower row in figure \ref{inputBAU}). There is also an increase in imports directed to Oriente, which coincides with a local decrease in thermal generation. Centro might be acting as a transit node between Norte and Oriente. Daily exports of around 200 MWh/day are observed from Sur to Centro during the dry season.
 
-For 2040, the addition of extra SD capacity produces an increase in exports from the Centro region (hydro-dominated generation). Imports are diminished in the Norte region (also hydro-dominated), while increasing in Oriente and Sur, whose annual thermal generation is in turn reduced by approximately 1,500 and 1,000 GWh, respectively.
+For 2040, the addition of extra DS capacity produces an increase in exports from the Centro region (hydro-dominated generation). Imports are diminished in the Norte region (also hydro-dominated), while increasing in Oriente and Sur, whose annual thermal generation is in turn reduced by approximately 1,500 and 1,000 GWh, respectively.
 
-Finally, for the year 2050, the BAU-SD scenario foresees diminished thermal generation in the Centro, Oriente, and Sur regions. Besides, imports during photovoltaic generation hours are diminished in the Norte and Oriente regions. These decreases in imports to Norte and Oriente are, in part, compensated by an increase in imports from Sur, whose generation share is entirely thermal.
+Finally, for the year 2050, the BAU-DS scenario foresees diminished thermal generation in the Centro, Oriente, and Sur regions. Besides, imports during photovoltaic generation hours are diminished in the Norte and Oriente regions. These decreases in imports to Norte and Oriente are, in part, compensated by an increase in imports from Sur, whose generation share is entirely thermal.
 
 \begin{figure*}[tp]
 	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
 	\includegraphics[width=\textwidth]{inputTEN.jpg}
-	\caption{\label{inputBAU} Evolution of regional projected annual electricity generation according to BAU scenario (upper row), and differences for BAU-SD scenario (lower row)}
+	\caption{\label{inputBAU} Evolution of regional projected annual electricity generation according to BAU scenario (upper row), and differences for BAU-DS scenario (lower row)}
 \end{figure*}
 
-For the ALT scenario, interregional power flows vary across seasons and time of day. For the year 2030, Oriente and Sur are the main electricity exporters during the dry season, (figure \ref{tradeALT}), sending power to Norte region between 00:00 and 18:00 h. After 18:00 h, exports originate mainly from Oriente and are directed toward Sur region. During the wet season, energy flows from Oriente and Centro toward Sur region, except during solar production hours, when the high share of photovoltaic generation in Sur (figure \ref{inputALT}) produces a surplus that is instead exported toward Norte region. It is also worth noting the substantial hydro and wind generation output of Oriente region in this scenario, which underpins its role as a net exporter throughout the year.
+For the ALT scenario, interregional power flows vary across seasons and time of day. For the year 2030, Oriente and Sur are the main electricity exporters during the dry season, (top row in figure \ref{tradeALT}), sending power to Norte region between 00:00 and 18:00 h. After 18:00 h, exports originate mainly from Oriente and are directed toward Sur region. During the wet season, energy flows from Oriente and Centro toward Sur region, except during solar production hours, when the high share of photovoltaic generation in Sur (top row in figure \ref{inputALT}) produces a surplus that is instead exported toward Norte region. It is also worth noting the substantial hydro and wind generation output of Oriente region in this scenario, which underpins its role as a net exporter throughout the year.
 
 For the year 2040 Oriente and Sur are still the main electricity exporting regions showing a similar daily scheme to 2030. Exports are directed towards the Norte region, whose overall generation barely varies since 2030 (Figure \ref{inputALT}). Imports from the Sur region during nighttime hours in the humid season cease.
 
@@ -445,21 +446,45 @@ Distinct interregional trade patterns emerge during non-solar and solar generati
 \begin{figure*}[tp]
 	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
 	\includegraphics[width=\textwidth]{tradeALT.png}
-	\caption{\label{tradeA} Daily profiles of inter regional exports and imports of power flow por ALT scenario (first and third row), and differences for ALT-SD scenario (second and fourth row)}
+	\caption{\label{tradeA} Daily profiles of inter regional exports and imports of power flow por ALT scenario (first and third row), and differences for ALT-DS scenario (second and fourth row)}
 \end{figure*}
 
-La incorporación de 900 MW de GD en este escenario produce efectos diferentes que en el caso del escenario TEN ya que la capacidad instalada total, y en particular de renovables, es mayor. Por este motivo la capacidad GD adicional es proporcionalmente menor. En líneas generales, el mayor volumen de generación desplazada por la GD es hidroeléctrica (figura 18, fila inferior). Para el año 2030 se observa que la región Oriente desplaza exportación de la región Sur en horas de la mañana en la temporada seca (figura 16, fila inferior). Luego, se observan variaciones intra-diarias en las regiones Oriente y Centro. En cuanto a las importaciones, Norte y Centro en los horarios de producción de energía solar. Se desplazan volúmenes pequeños de generación hidroeléctrica en las regiones de Norte, Centro y Oriente, y térmica en la región Sur. 
+The additional 900 MW of DS capacity in the ALT-DS scenario, compared to BAU-DS, leads to different effects due to the overall higher renewable installed capacity. This produces greater temporal overlap between renewable generation sources, reducing hydro output (bottom row in figure \ref{inputALT}). For 2030, exports from Oriente and imports from Centro and Sur decrease during solar production hours. During the dry season, morning imports shift from Sur to Oriente (bottom row in figure \ref{tradeALT}). Compared to the ALT scenario, hydro generation is reduced in the Norte, Centro, and Oriente regions, while thermal generation is displaced in Sur.
+
+During 2040, exports from the Centro region increase, while imports switch from Norte to Oriente during solar production hours. Hydro generation diminishes in the Oriente region compared to 2030. There are also small reductions in wind generation (Oriente) and centralized solar generation (Sur). Finally, during 2050, there is an overall decrease in imports from the Oriente and Norte regions during solar production hours. Hydro generation is further reduced in the Centro region, while the Oriente and Sur regions experience a reduction in thermal generation.
 
 \begin{figure*}[tp]
 	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
 	\includegraphics[width=\textwidth]{inputALT.jpg}
-	\caption{\label{inputALT} Evolution of regional projected annual electricity generation according to BAU scenario (upper row), and differences for BAU-SD scenario (lower row)}
+	\caption{\label{inputALT} Evolution of regional projected annual electricity generation according to BAU scenario (upper row), and differences for BAU-DS scenario (lower row)}
 \end{figure*}
 
-\begin{figure}[hbpt]
-	\includegraphics[clip,width=1\columnwidth]{vert.png}
-	\caption{\label{vert} Regional centralized capacity additions [MW] according to BAU and ALT scenarios}
-\end{figure}
+
+\subsection{Energy curtailment}
+
+One of the most salient results of the simulation is the impact of DS penetration on the output of centralized generation units in the ALT scenario. This scenario includes higher centralized renewable capacity than the BAU scenario, and the additional DS generation overlaps in time with that centralized renewable supply. Notably, total centralized capacity remains constant across the ALT and ALT-DS scenarios, but DS generation changes their utilization patterns.
+
+In the BAU scenario, the addition of 900 MW of DS capacity (left side of Figure \ref{pow2}) leads to a reduction in thermal generation of approximately 760 GWh/year by 2050, whereas in the ALT-DS scenario, DS penetration instead displaces renewable generation. Total displaced energy amounts and the fuel share are similar between seasons. By 2030, curtailment of renewable generation (mostly hydro) reaches approximately 670 MWH/day, which increases to 1800 MWh/day from 2040 onwards. The percentage of curtailed renewable generation reaches a peak of 35\% after 2030 and then gradually descends to 12\% at the end of the simulation period (left panel in figure...)
+
+\begin{figure*}[tp]
+	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
+	\includegraphics[width=0.9\textwidth, left]{pow2.png}
+	\caption{\label{pow2} Difference in hourly power output of centralized generation units between BAU-DS/ALT-DS and BAU/ALT scenarios}
+\end{figure*}
+
+These preliminary results motivated a more in-depth analysis of the NIS´s dispatch and management of future power generation considering that: a large share of the renewable capacity contemplated in the ALT scenario is planned to be installed within a 5-year horizon (Figure \ref{addition}). Curtailment mitigation strategies include increased flexibility in power generation, demand-side management, ¨Power-to-X¨ solutions, regional complementarity and the use of energy storage in batteries or hydroelectric reservoirs \cite{li2015comprehensive, bird2016wind, denholm2019timescales}.
+
+Hydroelectricity, in particular, provides excellent flexibility services along with low operational costs \cite{liu2023balancing}. In addition, reservoir hydroelectricity can further reduce renewable curtailment by allowing time-shifting generation \cite{denholm2012energy}. Therefore, power grids with a high penetration of reservoir hydroelectricity present additional advantages when dealing with the integration of variable renewable energies \cite{wan1993factors, acker2012integration}. Hydroelectricity represents around 50\% of Bolivia's current electricity generation (Table \ref{gene}), and important hydro capacity additions are contemplated in national expansion plans (Figures \ref{addition} and \ref{scenarios}). An alternative daily dispatch scheme for hydroelectricity has been designed for Bolivia's power sector, and evaluated in terms of impacts in energy curtailment. As described in the methodology section, this implied a thorough analysis of historical hydro generation profiles and stored water levels, and shifting from an existing load-demand oriented operation scheme to a balancing-oriented hydropower operation scheme.
+
+\section{Conclusions}\label{Conclusions}
+
+This paper presents a modeling exercise of Bolivia's energy system using the LEAP model, with a particular focus on renewable penetration scenarios. Results provide valuable insights concerning long-term energy planning and power dispatch schemes. To begin with, the addition of 900 MW of extra DS capacity leads to reductions in annual electricity demand of around 8\%. Positive externalities related to the expansion of DS capacity, which include reductions in CO2e emissions and fossil fuel savings, are greater in the BAU-DS scenario, in which DS generation displaces thermal generation.
+
+Overall accumulated costs associated with the power system are greater for the ALT scenario (+40\%), which is explained by higher capital costs. The addition of 900 MW of extra DS capacity increases overall costs by 2\% and 1.6\% for the BAU and ALT scenarios, respectively. In both cases, installation costs exceed fuel, capital, and O\&M related savings.
+
+Otro de los aspectos novedosos de este trabajo fue la elaboración por primera vez de un modelo LEAP energético regionalizado para Bolivia. Esto insumió esfuerzos adicionales a un modelado tradicional, pero permitió comenzar a simular el funcionamiento real del sistema energético y los intercambios que se producen entre las distintas regiones o nodos. En cuanto a los flujos de energía y balances entre las regiones interconectadas propuestas (Norte, Sur, Centro y Oriente), en el escenario TEN la región Centro es la principal exportadora de electricidad. Se contempla que, a medida que se incrementa la demanda de electricidad en el escenario tendencial, se observa un aumento de generación térmica en las regiones Centro, Sur y Oriente, mientras que la generación en la región Norte permanece prácticamente constante a lo largo del período de simulación. Las exportaciones se dirigen a las regiones Oriente y Sur al comienzo de la simulación para luego desplazarse a la región Norte. En líneas generales, la incorporación de 900 MW de GD adicional (escenario TEN-GD) reduce la importación de electricidad en la región Norte en la franja horaria de producción de energía solar, y reducciones en la generación térmica en las regiones Centro, Oriente y Sur. Para el escenario ALT se suma la región Oriente como exportadora de electricidad debido a la incorporación de gran cantidad potencia renovable en este escenario. Esta exportación se dirige principalmente a la región Sur, cuya generación aumenta en una proporción menor al resto de las regiones durante el período de simulación. En este escenario, la incorporación de 900 MW adicionales de GD (escenario ALT-GD) produce una reducción de generación térmica menor que en el escenario TEN, mientras que se observa una disminución de la generación hidroeléctrica debido a la competencia entre fuentes de generación renovable.
+
+
 
 
 % Numbered list

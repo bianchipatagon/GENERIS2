@@ -29,7 +29,7 @@ ax2.bar(ad['Anio'], ad['Solar'], bottom=ad['Hidro']+ad['Eolica'], color='#FBAA1B
 ax2.set_xlim(2023, 2050)
 
 ax3 = fig.add_subplot(gs[1, :])
-ax3.set_title('SD', fontsize = 13)
+ax3.set_title('DS', fontsize = 13)
 ax3.plot(ad['Anio'], ad['cien'], color='#FBAA1B', linewidth=2)
 ax3.plot(ad['Anio'], ad['mil'], color='#FBAA1B')
 ax3.fill_between(ad['Anio'], 0, ad['mil'], alpha=0.5, color='#FBAA1B', label='1000 MW')

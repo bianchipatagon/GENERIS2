@@ -356,9 +356,9 @@ for ax in axs[2:, :].flat:  # rows 3 onward, all columns
     ax.set_position([pos.x0, pos.y0 - shift, pos.width, pos.height])
 
 fig.text(0.91, 0.79, 'BAU', va='center' ,fontsize=12, rotation='vertical')  
-fig.text(0.91, 0.6, '(BAU-SD) \n  - BAU', va='center' ,fontsize=12, rotation='vertical')  
+fig.text(0.91, 0.6, '(BAU-DS) \n  - BAU', va='center' ,fontsize=12, rotation='vertical')  
 fig.text(0.91, 0.4, 'BAU', va='center' ,fontsize=12, rotation='vertical')  
-fig.text(0.91, 0.2, '(BAU-SD) \n  - BAU', va='center' ,fontsize=12, rotation='vertical')  
+fig.text(0.91, 0.2, '(BAU-DS) \n  - BAU', va='center' ,fontsize=12, rotation='vertical')  
 fig.text(0.04, 0.5, '[MW]', va='center' ,fontsize=12, rotation='vertical')  
 
 plt.savefig('tradeTEN.svg', dpi=300, bbox_inches="tight")

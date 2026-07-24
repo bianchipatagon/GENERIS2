@@ -185,7 +185,7 @@ axs[1,3].axvline(2040, linewidth=1, color='black', label='_nolegend_', linestyle
 fig.subplots_adjust(wspace=0.05, hspace=0.1)
 
 fig.text(0.91, 0.6, 'BAU', va='center' ,fontsize=12)  
-fig.text(0.91, 0.23, '(BAU-SD) \n - BAU', va='center' ,fontsize=12)  
+fig.text(0.91, 0.23, '(BAU-DS) \n - BAU', va='center' ,fontsize=12)  
 fig.text(0.06, 0.5, '[GWh]', va='center' ,fontsize=12, rotation='vertical')  
 
 plt.savefig('inputTEN.jpg', dpi=300, bbox_inches="tight")
