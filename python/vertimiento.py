@@ -9,7 +9,7 @@ import matplotlib.patches as patches
 
 ad = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/vertimiento.txt', header=0, delimiter=';', na_values='-999')
 print(ad)
-fig, ax1 = plt.subplots(1,figsize=(5,2),sharex=True, sharey=True)
+fig, ax1 = plt.subplots(1,figsize=(4,2),sharex=True, sharey=True)
 '''
 ax1.bar(ad['anio'], ad['SolarT'], color='#FBAA1B')
 ax1.bar(ad['anio'], ad['EolicaT'], bottom=ad['SolarT'], color='#8FC73E')
@@ -28,10 +28,12 @@ ax1.bar(ad['anio'], ad['Eolica'], bottom=ad['Solar'], color='#8FC73E', alpha=0.8
 ax1.bar(ad['anio'], ad['Hidro'], bottom=ad['Solar']+ad['Eolica'], color='#0000CD', alpha=0.8, width = 1)
 ax1.set_ylabel('curtailment [GWh]', fontsize=12)
 # ~ ax2.set_yticks([0, 500, 1000, 1500, 2000, 2500, 3000, 3500, 4000])   
-ax1.legend(["Solar","Wind","Hydro"], frameon=False,bbox_to_anchor=(0.23, 0.7), borderaxespad=0.,fontsize=10)
+ax1.legend(["Solar","Wind","Hydro"], frameon=False,bbox_to_anchor=(0.23, 0.7), borderaxespad=0.,fontsize=9)
 
 ax2 = ax1.twinx()
-ax2.plot(ad['anio'], ad['Porc'],'.', color = 'orangered', markersize = 10)
+ax2.plot(ad['anio'], ad['Porc'], color = 'orangered', linewidth=2)
+ax2.plot(ad['anio'], ad['Porc'],'o', color = 'orangered', markersize = 6, mfc='white', markeredgewidth=2)
+
 ax2.set_ylabel('% renewables', fontsize=12, color='orangered')
 ax2.tick_params(axis='y', colors='orangered')
 # ~ ax2.set_ylim(0, 4300)

@@ -52,11 +52,11 @@ sizesE2   = valuesE2 * s_scale             # passed to scatter(s=...)
 sizesS2   = valuesS2 * s_scale             # passed to scatter(s=...)
 sizesH2   = valuesH2 * s_scale             # passed to scatter(s=...)
 
-fig, ((ax1, ax2, ax3),(ax4, ax5, ax6)) = plt.subplots(2,3,figsize=(1, 14),subplot_kw={"projection": ccrs.PlateCarree()},)
+fig, ((ax1, ax2, ax3),(ax4, ax5, ax6)) = plt.subplots(2,3,figsize=(16, 13),subplot_kw={"projection": ccrs.PlateCarree()},)
 
 #####
 ax1.tick_params(axis='both', labelsize=0, color='white')
-ax1.set_title('Wind', fontsize=30)
+ax1.text(-62, -11,  'Wind', fontsize=30)
 Sur.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax1, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax1, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -67,7 +67,6 @@ sc = ax1.scatter(
     lons, lats,
     s          = sizesE,         # marker area (in points²)
     color="#8FC73E",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -78,7 +77,7 @@ for lon, lat, val in zip(lons, lats, valuesE):
     ax1.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -87,8 +86,8 @@ for lon, lat, val in zip(lons, lats, valuesE):
     )
 #####
 ax2.tick_params(axis='both', labelsize=0, color='white')
-ax2.set_title('BAU \n Solar', fontsize=30)
-
+ax2.set_title('BAU', fontsize=35)
+ax2.text(-62, -11,  'Solar', fontsize=30)
 Sur.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax2, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
 Centro.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
@@ -99,7 +98,6 @@ sc = ax2.scatter(
     lons, lats,
     s          = sizesS,         # marker area (in points²)
     color="#FBAA1B",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -110,7 +108,7 @@ for lon, lat, val in zip(lons, lats, valuesS):
     ax2.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -119,7 +117,7 @@ for lon, lat, val in zip(lons, lats, valuesS):
     )
 #####
 ax3.tick_params(axis='both', labelsize=0, color='white')
-ax3.set_title('Hydro', fontsize=30)
+ax3.text(-62, -11,  'Hydro', fontsize=30)
 
 Sur.plot(ax=ax3, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax3, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
@@ -131,7 +129,6 @@ sc = ax3.scatter(
     lons, lats,
     s          = sizesH,         # marker area (in points²)
     color="#0000CD",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -142,7 +139,7 @@ for lon, lat, val in zip(lons, lats, valuesH):
     ax3.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -162,7 +159,6 @@ sc = ax4.scatter(
     lons, lats,
     s          = sizesE2,         # marker area (in points²)
     color="#8FC73E",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -173,7 +169,7 @@ for lon, lat, val in zip(lons, lats, valuesE2):
     ax4.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -182,7 +178,7 @@ for lon, lat, val in zip(lons, lats, valuesE2):
     )
 #####
 ax5.tick_params(axis='both', labelsize=0, color='white')
-ax5.set_title('ALT', fontsize=30)
+ax5.set_title('ALT', fontsize=35)
 
 Sur.plot(ax=ax5, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax5, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
@@ -194,7 +190,6 @@ sc = ax5.scatter(
     lons, lats,
     s          = sizesS2,         # marker area (in points²)
     color="#FBAA1B",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -205,7 +200,7 @@ for lon, lat, val in zip(lons, lats, valuesS2):
     ax5.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -224,7 +219,6 @@ sc = ax6.scatter(
     lons, lats,
     s          = sizesH2,         # marker area (in points²)
     color="#0000CD",        # color encodes same variable (optional)
-    cmap       = "plasma",
     alpha      = 0.75,
     edgecolors = "white",
     linewidths = 0.5,
@@ -235,7 +229,7 @@ for lon, lat, val in zip(lons, lats, valuesH2):
     ax6.text(
         lon, lat-0.5,          # +1.5° nudges the label above the circle
         f"{val:.0f}",            # format to 1 decimal place
-        fontsize      = 20,
+        fontsize      = 30,
         fontweight='bold',
         ha            = "center",
         va            = "bottom",
@@ -245,6 +239,6 @@ for lon, lat, val in zip(lons, lats, valuesH2):
     )
 fig.subplots_adjust(wspace=0.05, hspace=0.1)
 
-plt.savefig('mapas3.svg', dpi=600, bbox_inches="tight")
+plt.savefig('mapas3.png', dpi=600, bbox_inches="tight")
 
 # ~ plt.show()
