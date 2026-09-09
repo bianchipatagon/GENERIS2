@@ -13,7 +13,7 @@ fig, ax = plt.subplots(figsize=(6,4), sharey='row')
 gs = fig.add_gridspec(2,2, wspace=0.1, hspace=0.5, height_ratios=[1, 0.6])
 
 ax1 = fig.add_subplot(gs[0, 0])
-ax1.set_title('BAU', fontsize = 15)
+ax1.set_title('TEN', fontsize = 15)
 ax1.bar(ad['Anio'], ad['HidroT'], color='#0000CD', width=1)
 ax1.bar(ad['Anio'], ad['EolicaT'], bottom=ad['HidroT'], color='#8FC73E', width=1)
 ax1.bar(ad['Anio'], ad['SolarT'], bottom=ad['HidroT']+ad['EolicaT'], color='#FBAA1B', width=1)
@@ -32,7 +32,7 @@ ax2.set_xlim(2023, 2050)
 ax2.xaxis.set_tick_params(labelsize=15)
 
 ax3 = fig.add_subplot(gs[1, :])
-ax3.set_title('DS', fontsize = 15)
+ax3.set_title('GD', fontsize = 15)
 ax3.plot(ad['Anio'], ad['cien'], color='#FBAA1B', linewidth=2)
 ax3.plot(ad['Anio'], ad['mil'], color='#FBAA1B')
 ax3.fill_between(ad['Anio'], 0, ad['mil'], alpha=0.5, color='#FBAA1B', label='1000 MW')
@@ -47,4 +47,4 @@ fig.text(0.04, 0.5, '[MW]', va='center' ,fontsize=15, rotation='vertical')
 
 
 fig.subplots_adjust(wspace=0.05)
-plt.savefig('ad.svg', dpi=300, bbox_inches="tight")
+plt.savefig('ad2.svg', dpi=300, bbox_inches="tight")

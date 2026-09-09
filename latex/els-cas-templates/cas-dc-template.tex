@@ -13,7 +13,7 @@
 \usepackage[authoryear,longnamesfirst]{natbib}
 \usepackage{array}
 \usepackage[export]{adjustbox}
-
+\usepackage{comment}
 %%%Author macros
 \def\tsc#1{\csdef{#1}{\textsc{\lowercase{#1}}\xspace}}
 \tsc{WGM}
@@ -30,7 +30,7 @@
 \shorttitle{}    
 
 % Short author
-\shortauthors{Emilio Bianchi, Ignacio Sagardoy, Francisco Lallana, Gustavo Nadal, Gonzalo Bravo}  
+\shortauthors{Emilio Bianchi, Gonzalo Bravo, Francisco Lallana, Gustavo Nadal, Ignacio Sagardoy}  
 
 % Main title of the paper
 \title [mode = title]{GENERIS}  
@@ -43,19 +43,7 @@
 % eg: \tnotetext[1]{Title footnote text}
 \tnotetext[1]{} 
 
-% First author
-%
-% Options: Use if required
-% eg: \author[1,3]{Author Name}[type=editor,
-%       style=chinese,
-%       auid=000,
-%       bioid=1,
-%       prefix=Sir,
-%       orcid=0000-0000-0000-0000,
-%       facebook=<facebook id>,
-%       twitter=<twitter id>,
-%       linkedin=<linkedin id>,
-%       gplus=<gplus id>]
+ 
 
 \author[1,2]{Emilio Bianchi}%[<options>]
 
@@ -75,7 +63,7 @@
 % eg: \credit{Conceptualization of this study, Methodology, Software}
 \credit{Formal analysis, Investigation, Methodology, Visualization, Writing – original draft}
 
-\author[3]{Ignacio Sagardoy}%[<options>]
+\author[3]{Gonzalo Bravo}%[<options>]
 
 % Corresponding author indication
 %\cormark[1]
@@ -91,7 +79,7 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Conceptualization, Formal analysis, Investigation, Methodology, Validation}
+\credit{Funding acquisition, Project administration}
 
 \author[3]{Francisco Lallana}%[<options>]
 
@@ -129,7 +117,7 @@
 % eg: \credit{Conceptualization of this study, Methodology, Software}
 \credit{Conceptualization, Funding acquisition, Investigation, Methodology, Supervision}
 
-\author[3]{Gonzalo Bravo}%[<options>]
+\author[3]{Ignacio Sagardoy}%[<options>]
 
 % Corresponding author indication
 %\cormark[1]
@@ -145,7 +133,8 @@
 
 % Credit authorship
 % eg: \credit{Conceptualization of this study, Methodology, Software}
-\credit{Funding acquisition, Project administration}
+\credit{Conceptualization, Formal analysis, Investigation, Methodology, Validation}
+
 
 % Address/affiliation
 \affiliation[1]{organization={Consejo Nacional de Investigaciones
@@ -193,12 +182,6 @@ Here goes the abstract \nocite{*}%% Remove this line from your manuscript.
 %\includegraphics{}
 %\end{graphicalabstract}
 
-% Research highlights
-%\begin{highlights}
-%\item 
-%\item 
-%\item 
-%\end{highlights}
 
 
 %\nocite{*}
@@ -242,7 +225,7 @@ Bolivia's NIS has no current linkages with the national grids of bordering count
 \end{itemize}
 This regionalization was based on prior energy modeling studies conducted in Bolivia that proposed this specific departmental aggregation (see \cite{huallpara2023comparative}). Accordingly, this structure was replicated in the present study to facilitate comparison with independently conducted modeling exercises.
 
-Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. Pando Region is not currently interconnected with the other regions. AGREGAR LOSSES The main features of the power lines are detailed in Table \ref{lineas}.
+Figure \ref{mapa} shows the location of the nodes and the representation of the NIS, for which two power lines connecting Centro and Oriente, one line connecting Centro and Sur, one line connecting Centro and Norte, and one connecting Oriente and Norte were considered. Pando Region is not currently interconnected with the other regions. The main features of the power lines are detailed in Table \ref{lineas}. Transmission losses were not explicitly modeled in LEAP-NEMO; power flows between regions represent net energy transfers, a simplification  that may lead to a slight overestimation of usable generation, particularly for scenarios with larger inter-regional flows.
 
 \begin{figure}[hbpt]
 	\includegraphics[clip,width=1\columnwidth]{mapas.png}
@@ -271,16 +254,16 @@ In this study, the Low Emissions Analysis Platform (LEAP) and the Next Energy Mo
 
 The structure of both energy demand and supply — including regional features — was replicated in LEAP using information from national energy balances and inventories \cite{MHE2023BED, MHE2024BEN, AETN2026}, which provide annual energy demand volumes disaggregated by sector (industry, residential, transport, etc.) and by energy source (electricity, gasoline, diesel, etc.), as well as an updated generation fleet inventory. The base year of the simulation was set to 2023, and the simulation covers the 2023–2050 period.
 
-Both power load curves as well as maximum availability curves for hydroelectric, solar and wind plants were configured with two-hourly resolution grouped in a wet season (november to april) amd a dry season (may to october), resulting in XXX tome slices per year.
+Both power load curves as well as maximum availability curves for hydroelectric, solar and wind plants were configured with two-hourly resolution grouped in a wet season (november to april) amd a dry season (may to october), resulting in 24 time slices.
 
 
 \subsection{Demand}
 
-As mentioned before, energy demand was modeled for 5 geographical regions (Pando, Norte, Centro Oriente, Sur) and for 7 sectors: residential, transport, industry, commercial + public, agriculture + fishery + mining, and construction. For the residential sector, the number of households represents the unit of consumption. We used population projections from the national bureau of statistics (INE in spanish \cite{INE2024CPV}) to calculate the projected number of households. Households were then disaggregated into urban and rural subsectors, and rural households were further divided into electrified and non-electrified. Final energy uses — such as cooking, water heating, food conservation, and lighting — were then characterized in terms of coverage, efficiency, fuel share, and energy intensity (DE DONDE SALIO ESTO, CITAR). Miscellaneous thermal and electrical uses were also characterized. All electrical appliances were associated with a load curve (EN QUE TRABAJO PREVIO SE CARACTERIZO ESTO).
+As mentioned before, energy demand was modeled for 5 geographical regions (Pando, Norte, Centro Oriente, Sur) and for 7 sectors: residential, transport, industry, commercial + public, agriculture + fishery + mining, and construction. For the residential sector, the number of households represents the unit of consumption. We used population projections from the national bureau of statistics (INE in spanish \cite{INE2024CPV}) to calculate the projected number of households. Households were then disaggregated into urban and rural subsectors, and rural households were further divided into electrified and non-electrified. Final energy uses — such as cooking, water heating, food conservation, and lighting — were then characterized in terms of coverage, efficiency, fuel share, and energy intensity (*1 \textbf{en que trabajo previo se caracterizó esto?}). Miscellaneous thermal and electrical uses were also characterized. All electrical appliances were associated with a load curve (*2 \textbf{en que trabajo previo se caracterizó esto?}).
 
 The transport sector was sub-divided into: road (light-duty, medium-duty, and heavy-duty), rail, air, waterway, and cable car. The vehicle fleet was regionalized according to inventories provided by INE.
 
-The industrial sector was disaggregated into large-scale and small-scale units. For small-scale units, previous sectoral surveys (CITA) allowed further disaggregation into seven categories: food, beverages and tobacco; non-metallic minerals; paper, wood and furniture; machinery and metals; textiles; clothing and leather; and chemicals, plastics and pharmaceuticals. Large-scale units were classified into seven categories according to a previous sectoral survey from INE: food and beverage; cement; bricks; metals; paper, cardboard and wood; chemicals and petrochemicals; and construction materials. For this disaggregation level, we included the consumption share of different fuel types for the years 2021–2023. The fuels considered are electricity, diesel, gasoline, jet fuel, biomass, NG, and liquefied petroleum gas (LPG).
+The industrial sector was disaggregated into large-scale and small-scale units. For small-scale units, previous sectoral surveys (*3 \textbf{hay alguna referencia?}) allowed further disaggregation into seven categories: food, beverages and tobacco; non-metallic minerals; paper, wood and furniture; machinery and metals; textiles; clothing and leather; and chemicals, plastics and pharmaceuticals. Large-scale units were classified into seven categories according to a previous sectoral survey from INE: food and beverage; cement; bricks; metals; paper, cardboard and wood; chemicals and petrochemicals; and construction materials. For this disaggregation level, we included the consumption share of different fuel types for the years 2021–2023. The fuels considered are electricity, diesel, gasoline, jet fuel, biomass, NG, and liquefied petroleum gas (LPG).
 
 Only one energy demand growth scenario was considered in this modeling exercise. For the transport; industry; commercial and public; agriculture, fishery and mining; and construction sectors, gross domestic product (GDP) was taken as the driver of energy demand. Sub-national reports from INE allowed the regional and sectoral disaggregation of GDP. An annual growth rate of 2.8\%, based on historical trends, was considered for the simulation period. For the residential sector, the number of households was taken as the driver of energy demand. INE projects an overall population growth of 20\%, reaching a total of 13.4 million inhabitants by 2050. Data from the last census allowed the regional and urban/rural disaggregation of population. For each region, both total population and number of households were extrapolated from the base year onward, assuming that the regional proportion remains constant — an assumption that held for the 2012–2024 period. In order to project the regional urban/rural share of households, the ratio of urban-to-rural growth rates was computed. Then, an objective function was included in the projection so that the overall projected national number of urban households matched CEPAL's projection. 
 
@@ -351,7 +334,14 @@ Regarding the opportunity cost of NG — the main input for fossil-fueled genera
 
 \subsubsection{Alternative hydro operation scheme}
 
-....
+Bolivia's current hydroelectric generation is around 2,800 GWh per year, of which approximately 55\% is operated by the company ENDE Corani. A monthly analysis of the turbined-to-stored water ratio shows that only between September and November (ratios above 50\%) is there little to no margin to manage water volumes, whereas in the remaining months, around 80\% of generation could potentially be shifted to non-solar hours. The company COBEE operates around 30\% of the national hydroelectric generation. A similar analysis shows that water management is only feasible between March and June. Nevertheless, the maximum manageable energy volume was reduced from 80\% to 65\%, otherwise the maximum utilization factor would be overcomed. Up to 25\% of energy generation is relocated during the dry season. Base on these analyses, an intra-daily balancing-oriented hydro operation scheme is postulated, figure \ref{fu} a) and b) (dry and wet season respectively) shows current and proposed hydro operating schemes.   
+
+\begin{figure*}[tp]
+	\includegraphics[width=0.9\textwidth, left]{fu.png}
+	\caption{\label{fu} Current (blue line) and proposed (sky blue line) hydro hourly operation schemes and solar utilization factor (yellow area) for dry (a) and wet (b) seasons. Endogenous battery capacity additions (c)}
+\end{figure*}
+
+\subsubsection{Endogenous battery capacity addition}
 
 \section{Results}
 
@@ -471,7 +461,6 @@ One of the most salient results of the simulation is the impact of DS penetratio
 In the BAU scenario, the addition of 900 MW of DS capacity (left side of Figure \ref{pow2}) leads to a reduction in thermal generation of approximately 760 GWh/year by 2050, whereas in the ALT-DS scenario, DS penetration instead displaces renewable generation. Total displaced energy amounts and the fuel share are similar between seasons. By 2030, curtailment of renewable generation (mostly hydro) reaches approximately 670 MWh/day, which increases to 1800 MWh/day from 2040 onwards. The percentage of curtailed renewable generation reaches a peak of 35\% after 2030 and then gradually descends to 12\% at the end of the simulation period (left panel in figure...)
 
 \begin{figure*}[tp]
-	%\includegraphics[clip,width=1\columnwidth]{mapas3.png}
 	\includegraphics[width=0.9\textwidth, left]{Pow2.png}
 	\caption{\label{pow2} Difference in hourly power output of centralized generation units between BAU-DS/ALT-DS and BAU/ALT scenarios}
 \end{figure*}
@@ -481,6 +470,11 @@ These preliminary results motivated a more in-depth analysis of the NIS´s dispa
 Current curtailment mitigation strategies include increased flexibility in power generation, demand-side management, regional complementarity and the use of energy storage in batteries or hydroelectric reservoirs \cite{li2015comprehensive, bird2016wind, denholm2019timescales}, among others.
 
 Hydroelectricity, in particular, provides excellent flexibility services along with low operational costs \cite{liu2023balancing}. In addition, reservoir hydroelectricity can further reduce renewable curtailment by allowing time-shifting generation \cite{denholm2012energy}. Therefore, power grids with a high penetration of reservoir hydroelectricity present additional advantages when dealing with the integration of variable renewable energies \cite{wan1993factors, acker2012integration}. Hydroelectricity represents around 50\% of Bolivia's current electricity generation (Table \ref{generation}), and important hydro capacity additions are contemplated in national expansion plans (Figures \ref{addition} and \ref{scenarios}). An alternative daily dispatch scheme for hydroelectricity has been designed for Bolivia's power sector, and evaluated in terms of impacts in energy curtailment. As described in the methodology section, this implied a thorough analysis of historical hydro generation profiles and stored water levels, and shifting from an existing load-demand oriented operation scheme to a balancing-oriented hydropower operation scheme.
+
+\begin{figure*}[tp]
+	\includegraphics[width=0.9\textwidth, left]{vertimiento.png}
+	\caption{\label{vert} Difference in hourly power output of centralized generation units between BAU-DS/ALT-DS and BAU/ALT scenarios}
+\end{figure*}
 
 \section{Conclusions}\label{Conclusions}
 
@@ -495,28 +489,7 @@ Results reveal that high levels of energy curtailment can arise in ambitious ren
 This motivated the formulation of an alternative hydroelectric operation scheme that, making use of Bolivia's high installed hydro capacity, shifts the current load-following-oriented paradigm to a balancing-oriented scheme.
 
 
-% Numbered list
-% Use the style of numbering in square brackets.
-% If nothing is used, default style will be taken.
-%\begin{enumerate}[a)]
-%\item 
-%\item 
-%\item 
-%\end{enumerate}  
 
-% Unnumbered list
-%\begin{itemize}
-%\item 
-%\item 
-%\item 
-%\end{itemize}  
-
-% Description list
-%\begin{description}
-%\item[]
-%\item[] 
-%\item[] 
-%\end{description}  
 
 \clearpage %%Remove this from your manuscript
 

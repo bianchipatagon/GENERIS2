@@ -17,10 +17,10 @@ fig = plt.figure(figsize=(5.5, 3))
 gs = gridspec.GridSpec(2, 2, figure=fig)
 
 ax1 = fig.add_subplot(gs[:, 0])  # All rows, first column
-ax1.plot(ad45['Anio'], ad45['Tend'], color='#A1140B', label='BAU')
-ax1.plot(ad45['Anio'], ad45['TendGD'], color='#A1140B', alpha=0.7, label='BAU-SD')
+ax1.plot(ad45['Anio'], ad45['Tend'], color='#A1140B', label='TEN')
+ax1.plot(ad45['Anio'], ad45['TendGD'], color='#A1140B', alpha=0.7, label='TEN-GD')
 ax1.plot(ad45['Anio'], ad45['Alt'], color='#A1140B', alpha=0.4, label='ALT')
-ax1.plot(ad45['Anio'], ad45['AltGD'], color='#A1140B', alpha=0.2, label='ALT-SD')
+ax1.plot(ad45['Anio'], ad45['AltGD'], color='#A1140B', alpha=0.2, label='ALT-GD')
 # ~ ax1.plot(ad45['Anio'], ad45['AltGDM'], color='#A1140B', alpha=0.2, label='ALT-GDM', linestyle='dashed')
 ax1.set_ylabel('GHG emissions \n [10^3 CO$_2$e]', fontsize=13)
 ax1.set_xlim(2025, 2045)

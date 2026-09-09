@@ -7,8 +7,12 @@ from scipy.stats import spearmanr
 from matplotlib.ticker import MultipleLocator
 import matplotlib.patches as patches
 
-ALT = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
-ALTGD = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT-GD.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+# ~ ALT = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+ALT = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALTper.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+
+# ~ ALTGD = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALT-GD.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+ALTGD = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/nodosALTGDper.txt', header=0, delimiter=';', na_values='-999',index_col='hora')
+
 numeric_labels = ALT.index.str.split(':').str[1] 
 print(numeric_labels)
 ALT = -ALT
@@ -356,9 +360,9 @@ for ax in axs[2:, :].flat:  # rows 3 onward, all columns
     ax.set_position([pos.x0, pos.y0 - shift, pos.width, pos.height])
 
 fig.text(0.91, 0.79, 'ALT', va='center' ,fontsize=12, rotation='vertical')  
-fig.text(0.91, 0.6, '(ALT-DS) \n  - ALT', va='center' ,fontsize=12, rotation='vertical')  
+fig.text(0.91, 0.6, '(ALT-GD) \n  - ALT', va='center' ,fontsize=12, rotation='vertical')  
 fig.text(0.91, 0.4, 'ALT', va='center' ,fontsize=12, rotation='vertical')  
-fig.text(0.91, 0.2, '(ALT-DS) \n  - ALT', va='center' ,fontsize=12, rotation='vertical')  
+fig.text(0.91, 0.2, '(ALT-GD) \n  - ALT', va='center' ,fontsize=12, rotation='vertical')  
 fig.text(0.04, 0.5, '[MW]', va='center' ,fontsize=12, rotation='vertical')  
 
-plt.savefig('tradeALT.svg', dpi=300, bbox_inches="tight")
+plt.savefig('tradeALTper.svg', dpi=300, bbox_inches="tight")

@@ -257,7 +257,7 @@ fig.text(0.91, 0.25, '2050', va='center' ,fontsize=14, rotation='vertical')
 # ~ fig.text(0.5, 0.005, 'hours', va='center' ,fontsize=14)  
 
 # ~ plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left', borderaxespad=0.)
-fig.text(.26, 0.97, '(BAU-DS) - BAU', va='center' ,fontsize=16)  
-fig.text(.66, 0.97, '(ALT-DS) - ALT', va='center' ,fontsize=16)  
+fig.text(.26, 0.97, '(TEN-GD) - TEN', va='center' ,fontsize=16)  
+fig.text(.66, 0.97, '(ALT-GD) - ALT', va='center' ,fontsize=16)  
 
 plt.savefig('Pow2.png', dpi=300, bbox_inches="tight")
