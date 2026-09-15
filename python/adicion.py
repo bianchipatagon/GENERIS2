@@ -9,8 +9,9 @@ import matplotlib.patches as patches
 
 ad = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/adiciones.txt', header=0, delimiter=',', na_values='-999')
 
-fig, ax = plt.subplots(figsize=(6,4), sharey='row')
-gs = fig.add_gridspec(2,2, wspace=0.1, hspace=0.5, height_ratios=[1, 0.6])
+fig, ax = plt.subplots(figsize=(6,3), sharey='row')
+# ~ gs = fig.add_gridspec(2,2, wspace=0.1, hspace=0.5, height_ratios=[1, 0.6])
+gs = fig.add_gridspec(2,2, wspace=0.1, hspace=0.5)
 
 ax1 = fig.add_subplot(gs[0, 0])
 ax1.set_title('TEN', fontsize = 15)
