@@ -12,6 +12,7 @@ CUR = pd.read_csv('curt.txt', header=0, delimiter=';', na_values='-999')
 CUR.loc[:, CUR.columns != 'hora'] *= -1
 CUR['hora_label'] = CUR['hora'].str.replace(r'^(Dry|Wet):', '', regex=True)
 LOAD = pd.read_csv('load.txt', header=0, delimiter=';', na_values='-999')
+LOAD2 = pd.read_csv('load2.txt', header=0, delimiter=';', na_values='-999')
 
 # ~ print(CUR)
 fig, axs = plt.subplots(2,4,figsize=(13.5,3),gridspec_kw={'height_ratios': [3, 1]}, sharey='row', sharex='row')
@@ -27,6 +28,7 @@ axs[0,0].bar(ALT['hora'], ALT['SolarN'], bottom=ALT['FosilN']+ALT['HidroN']+ALT[
 axs[0,0].bar(ALT['hora'], ALT['SolarDN'], bottom=ALT['SolarN']+ALT['ImpoN']+ALT['EolicoN']+ALT['FosilN']+ALT['HidroN'], color='#FBAA1B', alpha=0.8, width = 1, hatch='//')
 # ~ axs[0,0].plot(ALT['hora'], ALT['ImpoN']+ALT['EolicoN']+ALT['FosilN']+ALT['HidroN']+ALT['SolarN'], color='magenta', linewidth = 2)
 axs[0,0].plot(ALT['hora'], LOAD['loadN'], color='magenta', linewidth = 2)
+axs[0,0].plot(ALT['hora'], LOAD2['loadN'], color='magenta', linewidth = 2, ls = '--')
 axs[0,0].xaxis.set_tick_params(labelsize=12, rotation=90)
 axs[0,0].yaxis.set_tick_params(labelsize=12)
 axs[0,0].set_xlim(-0.5, 23.5)
@@ -47,6 +49,7 @@ axs[0,1].bar(ALT['hora'], ALT['SolarC'], bottom=ALT['ImpoC']+ALT['EolicoC']+ALT[
 axs[0,1].bar(ALT['hora'], ALT['SolarDC'], bottom=+ALT['SolarC']+ALT['ImpoC']+ALT['EolicoC']+ALT['FosilC']+ALT['HidroC'], color='#FBAA1B', alpha=0.8, width = 1, hatch='//')
 # ~ axs[0,1].plot(ALT['hora'], ALT['ImpoC']+ALT['EolicoC']+ALT['FosilC']+ALT['HidroC']+ALT['SolarC'], color='magenta', linewidth = 2)
 axs[0,1].plot(ALT['hora'], LOAD['loadC'], color='magenta', linewidth = 2)
+axs[0,1].plot(ALT['hora'], LOAD2['loadC'], color='magenta', linewidth = 2, ls = '--')
 axs[0,1].xaxis.set_tick_params(labelsize=12, rotation=90)
 axs[0,1].set_xticks(range(0, len(ALT['hora']), 2))
 axs[0,1].set_xticklabels(ALT['hora'][::2])
@@ -65,6 +68,7 @@ axs[0,2].bar(ALT['hora'], ALT['ImpoO'], bottom=ALT['EolicoO']+ALT['FosilO']+ALT[
 axs[0,2].bar(ALT['hora'], ALT['SolarDO'], bottom=+ALT['SolarO']+ALT['ImpoO']+ALT['EolicoO']+ALT['FosilO']+ALT['HidroO'], color='#FBAA1B', alpha=0.8, width = 1, hatch='//')
 # ~ axs[0,2].plot(ALT['hora'], ALT['ImpoO']+ALT['EolicoO']+ALT['FosilO']+ALT['HidroO']+ALT['SolarO'], color='magenta', linewidth = 2)
 axs[0,2].plot(ALT['hora'], LOAD['loadO'], color='magenta', linewidth = 2)
+axs[0,2].plot(ALT['hora'], LOAD2['loadO'], color='magenta', linewidth = 2, ls = '--')
 axs[0,2].xaxis.set_tick_params(labelsize=12, rotation=90)
 axs[0,2].set_xticks(range(0, len(ALT['hora']), 2))
 axs[0,2].set_xticklabels(ALT['hora'][::2])
@@ -83,9 +87,10 @@ axs[0,3].bar(ALT['hora'], ALT['ImpoS'], bottom=ALT['EolicoS']+ALT['FosilS']+ALT[
 axs[0,3].bar(ALT['hora'], ALT['SolarDS'], bottom=+ALT['SolarS']+ALT['ImpoS']+ALT['EolicoS']+ALT['FosilS']+ALT['HidroS'], color='#FBAA1B', alpha=0.8, width = 1, hatch='//')
 # ~ axs[0,3].plot(ALT['hora'], ALT['ImpoS']+ALT['EolicoS']+ALT['FosilS']+ALT['HidroS']+ALT['SolarS'], color='magenta', linewidth = 2)
 axs[0,3].plot(ALT['hora'], LOAD['loadS'], color='magenta', linewidth = 2)
+axs[0,3].plot(ALT['hora'], LOAD2['loadS'], color='magenta', linewidth = 2, ls = '--')
 
 axs[0,3].xaxis.set_tick_params(labelsize=12, rotation=90)
-axs[0,3].legend(["Demand","Hydro","Wind","Import", "Solar Dist.","Fossil","Solar"], frameon=False,bbox_to_anchor=(0.2, 0.8), loc='center left', borderaxespad=0.,fontsize=9, ncols = 2)
+axs[0,3].legend(["Net \ndemand","Global \ndemand","Hydro","Wind","Import", "Solar Dist.","Fossil","Solar"], frameon=False,bbox_to_anchor=(0.2, 0.8), loc='center left', borderaxespad=0.,fontsize=9, ncols = 2)
 # ~ axs[0,3].legend(["Fósil", "Hidro","Solar","Eólica"], frameon=False,bbox_to_anchor=(-2, -1.6), loc='center left', borderaxespad=0.,fontsize=12, ncols=4)
 
 axs[0,3].set_xticks(range(0, len(ALT['hora']), 2))
