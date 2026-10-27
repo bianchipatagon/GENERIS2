@@ -188,4 +188,4 @@ fig.text(0.91, 0.6, 'ALT', va='center' ,fontsize=12)
 fig.text(0.91, 0.23, '(ALT-DS) \n - ALT', va='center' ,fontsize=12)  
 fig.text(0.06, 0.5, '[GWh]', va='center' ,fontsize=12, rotation='vertical')  
 
-plt.savefig('inputALT.jpg', dpi=300, bbox_inches="tight")
+plt.savefig('inputALT.jpg', dpi=1000, bbox_inches="tight")

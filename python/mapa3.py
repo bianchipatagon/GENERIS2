@@ -86,7 +86,7 @@ for lon, lat, val in zip(lons, lats, valuesE):
     )
 #####
 ax2.tick_params(axis='both', labelsize=0, color='white')
-ax2.set_title('TEN', fontsize=35)
+ax2.set_title('BAU', fontsize=35)
 ax2.text(-62, -11,  'Solar', fontsize=30)
 Sur.plot(ax=ax2, color= 'white', linewidth=3, alpha=0.8,edgecolor='grey')
 Norte.plot(ax=ax2, color= 'white',linewidth=3, alpha=0.8,edgecolor='grey')
@@ -239,6 +239,6 @@ for lon, lat, val in zip(lons, lats, valuesH2):
     )
 fig.subplots_adjust(wspace=0.05, hspace=0.1)
 
-plt.savefig('mapas3.png', dpi=600, bbox_inches="tight")
+plt.savefig('scenarios.svg', dpi=1000, bbox_inches="tight")
 
 # ~ plt.show()

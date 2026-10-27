@@ -239,4 +239,4 @@ fig.text(0.15,0.9,'wet \nseason',fontsize=10)
 fig.text(0.5,-0.15,'hours',fontsize=12)
 fig.text(0.45,1,'ALT-DS year:2050',fontsize=14)
 
-plt.savefig('abastALT.svg', dpi=300, bbox_inches="tight")
+plt.savefig('abastALT.svg', dpi=1000, bbox_inches="tight")

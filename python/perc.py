@@ -39,4 +39,4 @@ fig.text(0.15,0.75,'a)',fontsize=12)
 fig.text(0.60,0.75,'b)',fontsize=12)
 
 fig.subplots_adjust(wspace=0.3)
-plt.savefig('perc.png', dpi=300, bbox_inches="tight")
+plt.savefig('perc.png', dpi=1000, bbox_inches="tight")

@@ -109,6 +109,6 @@ Oriente.plot(ax=ax, color='#BCEE9B', linewidth=2, edgecolor='#C48888')
 # ~ Pando.plot(ax=ax, color='#36495A', linewidth=2, alpha=0.8,edgecolor='#C48888 ')
 Pando.plot(ax=ax, color='#9BBC9B', linewidth=2, edgecolor='#C48888')
 
-plt.savefig('mapas.png', dpi=600, bbox_inches="tight")
+plt.savefig('mapas.png', dpi=1000, bbox_inches="tight")
 
 # ~ plt.show()

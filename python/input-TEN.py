@@ -188,4 +188,4 @@ fig.text(0.91, 0.6, 'BAU', va='center' ,fontsize=12)
 fig.text(0.91, 0.23, '(BAU-DS) \n - BAU', va='center' ,fontsize=12)  
 fig.text(0.06, 0.5, '[GWh]', va='center' ,fontsize=12, rotation='vertical')  
 
-plt.savefig('inputTEN.jpg', dpi=300, bbox_inches="tight")
+plt.savefig('inputTEN.jpg', dpi=1000, bbox_inches="tight")

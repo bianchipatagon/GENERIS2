@@ -14,10 +14,10 @@ ad2 = pd.read_csv('/home/emi/Documents/GENERIS/GENERISpy/vertimientomb.txt', hea
 print(ad['Porc'])
 print(((ad1['Solar']+ad1['Eolica']+ad1['Hidro'])/ad1['Output'])*100)
 print(((ad2['Solar']+ad2['Eolica']+ad2['Hidro'])/ad1['Output'])*100)
-'''
+
 
 fig, (ax1,ax2,ax3) = plt.subplots(1,3,figsize=(12,2),sharex=True, sharey=True)
-'''
+
 # ~ ax1.bar(ad['anio'], ad['SolarT'], color='#FBAA1B')
 # ~ ax1.bar(ad['anio'], ad['EolicaT'], bottom=ad['SolarT'], color='#8FC73E')
 # ~ ax1.bar(ad['anio'], ad['HidroT'], bottom=ad['SolarT']+ad['EolicaT'], color='#207653')
@@ -27,7 +27,7 @@ fig, (ax1,ax2,ax3) = plt.subplots(1,3,figsize=(12,2),sharex=True, sharey=True)
 
 # ~ ax3 = ax1.twinx()
 # ~ ax3.plot(ad['anio'], ad['PorcT'])
-'''
+
 
 ####
 ax1.set_ylim(0, 4300)
@@ -92,5 +92,5 @@ ax6.set_ylabel('% renewables', fontsize=12, color='orangered')
 
 fig.subplots_adjust(wspace=0.05)
 
-plt.savefig('vertimiento.svg', dpi=300, bbox_inches="tight")
-'''
+plt.savefig('vertimiento.svg', dpi=1000, bbox_inches="tight")
+

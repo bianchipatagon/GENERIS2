@@ -62,4 +62,4 @@ fig.text(0.8, 0.8,'Oriente', fontsize=12)
 fig.text(0.8, 0.8,'Sur', fontsize=12)
 
 fig.subplots_adjust(wspace=0.05)
-plt.savefig('fu.svg', dpi=300, bbox_inches="tight")
+plt.savefig('fu.svg', dpi=1000, bbox_inches="tight")
